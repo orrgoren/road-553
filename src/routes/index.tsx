@@ -150,11 +150,11 @@ function ArgumentCard({ icon, title, text, index }: { icon: React.ReactNode; tit
         <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-amber-600/15 flex items-center justify-center text-amber-500">
           {icon}
         </div>
-        <h3 className="text-lg lg:text-xl font-bold text-white leading-tight" style={{ fontFamily: 'Rubik, sans-serif' }}>
+        <h3 className="text-lg lg:text-xl font-bold text-stone-800 leading-tight" style={{ fontFamily: 'Rubik, sans-serif' }}>
           {title}
         </h3>
       </div>
-      <p className="text-amber-100/60 leading-relaxed text-sm lg:text-base m-0">
+      <p className="text-stone-600 leading-relaxed text-sm lg:text-base m-0">
         {text}
       </p>
     </div>
@@ -267,7 +267,7 @@ function InteractiveMap() {
   return (
     <div className="relative rounded-2xl overflow-hidden border border-amber-600/20">
       <div ref={mapRef} style={{ height: '400px', width: '100%' }} />
-      <div className="absolute bottom-4 right-4 bg-black/80 backdrop-blur-sm rounded-lg px-4 py-2 text-sm text-amber-200 border border-amber-600/30">
+      <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 text-sm text-stone-600 border border-amber-200 shadow-sm">
         <span className="inline-block w-3 h-0.5 bg-amber-500 ml-2 align-middle"></span>
         מסלול כביש 553 המתוכנן
       </div>
@@ -309,7 +309,7 @@ function NewsletterForm() {
           value={email}
           onChange={e => setEmail(e.target.value)}
           placeholder="הכניסו את כתובת המייל שלכם"
-          className="w-full pr-12 pl-4 py-3.5 rounded-xl bg-white/5 border border-amber-600/20 text-white placeholder-amber-100/40 text-base transition-all"
+          className="w-full pr-12 pl-4 py-3.5 rounded-xl bg-amber-50 border border-amber-200 text-stone-800 placeholder-stone-400 text-base transition-all"
           dir="rtl"
         />
       </div>
@@ -346,13 +346,13 @@ function PetitionForm() {
       {/* Progress */}
       <div className="mb-6">
         <div className="flex justify-between items-end mb-2">
-          <span className="text-sm text-gray-400">יעד: {goal.toLocaleString('he-IL')} חתימות</span>
-          <span className="text-2xl font-black text-white">{signCount.toLocaleString('he-IL')}</span>
+          <span className="text-sm text-stone-500">יעד: {goal.toLocaleString('he-IL')} חתימות</span>
+          <span className="text-2xl font-black text-stone-800">{signCount.toLocaleString('he-IL')}</span>
         </div>
-        <div className="h-3 rounded-full bg-white/10 overflow-hidden">
+        <div className="h-3 rounded-full bg-amber-100 overflow-hidden">
           <div className="petition-bar h-full rounded-full" style={{ width: `${percentage}%` }} />
         </div>
-        <p className="text-xs text-gray-500 mt-1">{percentage.toFixed(1)}% מהיעד</p>
+        <p className="text-xs text-stone-400 mt-1">{percentage.toFixed(1)}% מהיעד</p>
       </div>
 
       {signed ? (
@@ -369,7 +369,7 @@ function PetitionForm() {
               value={name}
               onChange={e => setName(e.target.value)}
               placeholder="שם מלא"
-              className="flex-1 px-4 py-3.5 rounded-xl bg-white/5 border border-amber-600/20 text-white placeholder-amber-100/40 text-base transition-all"
+              className="flex-1 px-4 py-3.5 rounded-xl bg-amber-50 border border-amber-200 text-stone-800 placeholder-stone-400 text-base transition-all"
               dir="rtl"
             />
             <input
@@ -378,7 +378,7 @@ function PetitionForm() {
               value={city}
               onChange={e => setCity(e.target.value)}
               placeholder="יישוב"
-              className="flex-1 px-4 py-3.5 rounded-xl bg-white/5 border border-amber-600/20 text-white placeholder-amber-100/40 text-base transition-all"
+              className="flex-1 px-4 py-3.5 rounded-xl bg-amber-50 border border-amber-200 text-stone-800 placeholder-stone-400 text-base transition-all"
               dir="rtl"
             />
           </div>
@@ -441,7 +441,7 @@ function StickyNav() {
         {/* Right: Logo (RTL = right side) */}
         <div className="flex items-center gap-2">
           <span className="font-black text-gray-800 text-base sm:text-lg hidden sm:block" style={{ fontFamily: 'Rubik, sans-serif' }}>
-            מציל את תל מונד לב השרון
+            גוש תל מונד · לב השרון
           </span>
           <div className="w-9 h-9 rounded-full bg-amber-500 flex items-center justify-center flex-shrink-0">
             <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -464,44 +464,44 @@ function HomePage() {
 
   const arguments_data = [
     {
-      icon: <IconRoad />,
-      title: 'אוטוסטרדה ארצית בלב הבית שלנו',
-      text: 'כביש 553 מתוכנן להתרחב ל-6 עד 8 נתיבים שישמש כציר רוחב ארצי בין כבישים 2, 4 ו-6. המשמעות: הפיכת המרחב שלנו למסדרון תחבורה שיזרים תנועה כבדה דרך לב השרון ותל מונד.',
-    },
-    {
       icon: <IconShield />,
-      title: 'הילדים שלנו יאבדו את החופש לנוע בבטחה',
-      text: 'בתי הספר ממוקמים מחוץ ליישובים. אוטוסטרדה רחבה תחצה את המועצה ותיצור מחסום פיזי. הגעה לבית הספר, ביקור חברים או פעילות יהפכו למסוכנים ומורכבים.',
+      title: 'הילדים שלנו יאבדו את החופש לנוע בבטחה במרחב שבו הם גדלים',
+      text: 'בתי הספר היסודיים, חטיבות הביניים והתיכונים ממוקמים מחוץ ליישובים. כיום הילדים יכולים לנוע בין יישובים, לבקר חברים ולהגיע למסגרות החינוך בתוך מרחב קהילתי פתוח. אוטוסטרדה רחבה תחצה את המועצה ותיצור מחסום פיזי שיקשה מאוד על תנועה יומיומית. פעולות פשוטות כמו הגעה לבית הספר, ביקור אצל חבר או השתתפות בפעילות יהפכו למסוכנות ומורכבות ויפגעו בעצמאות ובביטחון של הילדים.',
     },
     {
       icon: <IconHeart />,
-      title: 'רעש, זיהום ופגיעה בבריאות',
-      text: 'אלפי כלי רכב ומשאיות כבדות בכל שעה. מחקרים הוכיחו: מגורים בסמוך לאוטוסטרדות גורמים לעלייה במחלות לב וריאות ופוגעים בהתפתחות ילדים. קירות אקוסטיים לא מונעים זיהום אוויר.',
+      title: 'אוטוסטרדה של 6 עד 8 נתיבים תביא איתה רעש, זיהום ופגיעה בבריאות',
+      text: 'תשתית בהיקף כזה תזרים אלפי כלי רכב נוספים בכל שעה, כולל משאיות כבדות. המשמעות היא חשיפה קבועה לרעש תחבורתי ולזיהום אוויר. מחקרים רבים הוכיחו כי מגורים בסמוך לאוטוסטרדות גורמים לעלייה במחלות לב וריאות ופוגעים בהתפתחות ילדים. קירות אקוסטיים אינם מונעים זיהום אוויר, והם אינם מונעים את הנזק הבריאותי המצטבר.',
     },
     {
       icon: <IconAlertTriangle />,
-      title: 'פגיעה בביטחון האישי ועלייה בפשיעה',
-      text: 'חיבור ישיר לכביש 6, לערי המשולש ולעוטף טולכרם ייצור נתיבי גישה ומילוט מהירים. המשמעות: פגיעה ביכולת האכיפה, עלייה בסיכון לפשיעה, והחלשת תחושת הביטחון.',
+      title: 'הכביש יהפוך את היישובים לנגישים יותר לפשיעה ויפגע בביטחון האישי',
+      text: 'החיבור הישיר לכביש 6, לערי המשולש ולעוטף טולכרם ייצור נתיבי גישה ומילוט מהירים. המשמעות היא פגיעה ביכולת האכיפה ועלייה בסיכון לפשיעה. אוטוסטרדה מהירה בצמוד ליישובים כפריים יוצרת נגישות גבוהה לגורמים חיצוניים ומחלישה את תחושת הביטחון של התושבים.',
     },
     {
       icon: <IconAlertTriangle />,
-      title: 'נקודת כשל במצבי חירום',
-      text: 'כשתנועה ארצית מתנקזת לציר אחד, כל תאונה או אירוע ביטחוני עלולים לשתק את האזור כולו. פגיעה ביכולת כוחות ההצלה להגיע ליישובים וביכולת התושבים להתפנות.',
+      title: 'הכביש יהפוך לנקודת כשל אחת שתסכן את היכולת לנוע ולהתגונן במצבי חירום',
+      text: 'כאשר תנועה אזורית וארצית מתנקזת לציר אחד מרכזי, כל תאונה, חסימה או אירוע ביטחוני עלולים לשתק את האזור כולו. המשמעות היא פגיעה ביכולת של כוחות הצלה להגיע במהירות ליישובים ופגיעה ביכולת התושבים להתפנות בעת הצורך. במקום לחזק את החוסן האזורי, הכביש עלול להפוך לנקודת תורפה.',
     },
     {
       icon: <IconSprout />,
-      title: 'פגיעה בשטחים חקלאיים ובביטחון המזון',
-      text: 'לב השרון הוא אזור חקלאי פעיל. הפקעת שטחים לטובת הרחבת כביש תפגע ביכולת הייצור המקומית. בעידן שבו ביטחון מזון הוא נכס אסטרטגי, שמירה על הקרקע היא אינטרס לאומי.',
+      title: 'הכביש יפגע בשטחים חקלאיים ובביטחון המזון של מדינת ישראל',
+      text: 'לב השרון הוא אזור חקלאי פעיל. הפקעת שטחים חקלאיים לטובת הרחבת כביש תפגע ביכולת הייצור המקומית ותצמצם את הקרקע החקלאית הזמינה. בעידן שבו ביטחון מזון הוא נכס אסטרטגי, שמירה על הקרקע החקלאית היא אינטרס לאומי.',
     },
     {
       icon: <IconUsers />,
-      title: 'חציית המועצה לשניים ופגיעה בקהילה',
-      text: 'אוטוסטרדה רחבה יוצרת חיץ פיזי בין יישובים, שכונות וקהילות. מרחב קהילתי אחד יהפוך לשטח מפוצל. הפגיעה אינה רק תחבורתית — היא פגיעה ישירה באופי החיים.',
+      title: 'הכביש יפגע במרקם החיים הקהילתי ויחצה את המועצה לשניים',
+      text: 'אוטוסטרדה רחבה יוצרת חיץ פיזי שמפריד בין יישובים, בין שכונות ובין קהילות. מה שהיה מרחב קהילתי אחד יהפוך לשטח מפוצל, שבו התנועה בין חלקי המועצה הופכת קשה ומוגבלת. הפגיעה איננה רק תחבורתית, היא פגיעה ישירה באופי החיים הקהילתי.',
     },
     {
       icon: <IconTrendingDown />,
-      title: 'ירידה בערך הבתים ובאיכות החיים',
-      text: 'קרבה לאוטוסטרדה גורמת לירידה בערך הנכסים. אזור מגורים כפרי ושקט יהפוך למרחב רועש ומזוהם. הפגיעה היא אישית, כלכלית ובלתי הפיכה עבור אלפי משפחות.',
+      title: 'הכביש יפגע בערך הבתים ובאיכות החיים של התושבים',
+      text: 'קרבה לאוטוסטרדה גורמת לירידה בערך הנכסים ולפגיעה באיכות החיים. אזור מגורים כפרי ושקט יהפוך למרחב רועש ומזוהם. הפגיעה היא אישית, כלכלית ובלתי הפיכה עבור אלפי משפחות.',
+    },
+    {
+      icon: <IconRoad />,
+      title: 'כביש 553 עם חיבור לכביש 6 לא נועד לשרת את תושבי לב השרון, אלא להעביר דרכם תנועה ארצית',
+      text: 'הרחבת הכביש אינה נועדה לשפר את איכות החיים של התושבים, אלא לשרת תנועה בין אזורים אחרים במדינה. המשמעות היא שהיישובים שלנו יישאו במחיר, בעוד שהתועלת העיקרית מיועדת לתנועה שעוברת דרכנו.',
     },
   ]
 
@@ -511,42 +511,38 @@ function HomePage() {
 
       {/* ═══ HERO ═══ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Landscape background gradient */}
-        <div className="absolute inset-0 hero-landscape" />
-
-        {/* Warm horizon glow */}
-        <div className="absolute inset-0">
-          <div className="absolute top-[38%] left-1/2 -translate-x-1/2 w-[80%] h-48 bg-amber-300/20 rounded-full blur-[80px]" />
-        </div>
-
-        {/* Bottom dark fade for text readability */}
+        {/* Real photo background */}
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%)'
+          backgroundImage: 'url(/hero.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }} />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.7) 100%)'
         }} />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-32">
-          {/* Green community badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-700/70 border border-emerald-500/50 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-green"></span>
-            <span className="text-emerald-200 text-sm font-medium">יוזמת תושבים — לב השרון וגוש תל מונד</span>
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 border border-white/30 mb-8 animate-fade-in-up backdrop-blur-sm" style={{ animationDelay: '0.2s' }}>
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse-green"></span>
+            <span className="text-white text-sm font-medium">תושבי לב השרון וגוש תל מונד</span>
           </div>
 
           <h1
-            className="text-4xl sm:text-5xl md:text-7xl font-black leading-tight mb-6 animate-fade-in-up"
-            style={{ fontFamily: 'Rubik, sans-serif', animationDelay: '0.4s', color: '#fde68a', textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
+            className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6 animate-fade-in-up text-white"
+            style={{ fontFamily: 'Rubik, sans-serif', animationDelay: '0.4s', textShadow: '0 2px 24px rgba(0,0,0,0.6)' }}
           >
-            לא בתוואי הזה
+            כביש 553 עומד להפוך
             <br />
-            <span style={{ color: '#fcd34d' }}>תושבי לב השרון וגוש</span>
+            <span style={{ color: '#fcd34d' }}>לאוטוסטרדה ארצית</span>
             <br />
-            <span style={{ color: '#fde68a' }}>תל מונד מציל</span>
+            בלב הבית שלנו
           </h1>
 
-          <p className="text-lg sm:text-xl text-amber-100/90 max-w-3xl mx-auto mb-10 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.6s', textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>
-            בכביש 553 והאזור החקלאי הסמוך, יתגנב בהחלטות הממשלה שינוי שישפיע לרעה על תושבי
-            האזור ויגרום לנזק להם לבלתי חזור.
-            <br />
-            <strong className="text-white">התאחדו אלינו לפני שהחלטות יתקבלו על ידי הגורמים לכך.</strong>
+          <p className="text-lg sm:text-xl text-white/85 max-w-3xl mx-auto mb-10 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.6s', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
+            כביש 553 מתוכנן להתרחב לכביש של 6 עד 8 נתיבים שישמש כציר רוחב ארצי בין כבישים 2, 4 ו־6.
+            המשמעות איננה שיפור של כביש מקומי, אלא הפיכתו למסדרון תחבורה ארצי שיזרים תנועה כבדה דרך לב השרון ותל מונד.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
@@ -554,7 +550,7 @@ function HomePage() {
               href="#petition"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-black text-lg no-underline transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-500/40 animate-pulse-amber"
             >
-              להצטרף לאלינו
+              חתמו על העצומה
             </a>
             <a
               href="#arguments"
@@ -574,19 +570,19 @@ function HomePage() {
       </section>
 
       {/* ═══ STATS BAR ═══ */}
-      <section className="relative py-16 border-y border-amber-600/20 bg-[#141005]">
+      <section className="relative py-14 border-y border-amber-200 bg-amber-50">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
           <div ref={stats[0].ref}>
             <div className="stat-number text-5xl sm:text-6xl font-black">{stats[0].count}</div>
-            <div className="text-amber-200/60 text-sm mt-2">נתיבים מתוכננים</div>
+            <div className="text-stone-500 text-sm mt-2">נתיבים מתוכננים</div>
           </div>
           <div ref={stats[1].ref}>
             <div className="stat-number text-5xl sm:text-6xl font-black">{stats[1].count}</div>
-            <div className="text-amber-200/60 text-sm mt-2">מספר הכביש</div>
+            <div className="text-stone-500 text-sm mt-2">מספר הכביש</div>
           </div>
           <div ref={stats[2].ref}>
             <div className="stat-number text-5xl sm:text-6xl font-black">{stats[2].count}</div>
-            <div className="text-amber-200/60 text-sm mt-2">כבישים ארציים מחוברים</div>
+            <div className="text-stone-500 text-sm mt-2">כבישים ארציים מחוברים</div>
           </div>
         </div>
       </section>
@@ -596,27 +592,22 @@ function HomePage() {
         <div className="max-w-5xl mx-auto px-4">
           <RevealSection>
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-amber-600/10 border border-amber-600/20 text-amber-400 text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-700 text-sm font-medium mb-4">
                 מה מתוכנן?
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                כביש 553 לא ישתפר —<br />
-                <span className="text-amber-500">הוא ישתנה לחלוטין</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-800" style={{ fontFamily: 'Rubik, sans-serif' }}>
+                כביש 553 עומד להפוך<br />
+                <span className="text-amber-600">לאוטוסטרדה ארצית בלב הבית שלנו</span>
               </h2>
             </div>
           </RevealSection>
 
           <RevealSection delay="reveal-delay-1">
             <div className="argument-card rounded-2xl p-8 lg:p-10 mb-8">
-              <p className="text-gray-300 text-lg leading-loose m-0">
-                כביש 553 מתוכנן להתרחב לכביש של <strong className="text-amber-400">6 עד 8 נתיבים</strong> שישמש כציר רוחב ארצי
-                בין כבישים 2, 4 ו-6. המשמעות איננה שיפור של כביש מקומי, אלא <strong className="text-amber-400">הפיכתו למסדרון
-                תחבורה ארצי</strong> שיזרים תנועה כבדה דרך לב השרון ותל מונד.
-              </p>
-              <p className="text-gray-300 text-lg leading-loose mt-4 mb-0">
-                הרחבת הכביש אינה נועדה לשפר את איכות החיים של התושבים, אלא לשרת תנועה בין
-                אזורים אחרים במדינה. <strong className="text-white">היישובים שלנו יישאו במחיר, בעוד שהתועלת
-                העיקרית מיועדת לתנועה שעוברת דרכנו.</strong>
+              <p className="text-stone-600 text-lg leading-loose m-0">
+                כביש 553 מתוכנן להתרחב לכביש של <strong className="text-amber-700">6 עד 8 נתיבים</strong> שישמש כציר רוחב ארצי בין כבישים 2, 4 ו־6.
+                המשמעות איננה שיפור של כביש מקומי, אלא <strong className="text-amber-700">הפיכתו למסדרון תחבורה ארצי</strong> שיזרים תנועה כבדה דרך לב השרון ותל מונד.
+                במקום כביש שמשרת את התושבים, המרחב שלנו יהפוך למעבר עבור תנועה שאינה קשורה לחיים כאן.
               </p>
             </div>
           </RevealSection>
@@ -630,11 +621,11 @@ function HomePage() {
         <div className="max-w-6xl mx-auto px-4">
           <RevealSection>
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-amber-600/10 border border-amber-600/20 text-amber-400 text-sm font-medium mb-4">
-                8 סיבות קריטיות
+              <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-700 text-sm font-medium mb-4">
+                8 סיבות מרכזיות
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                למה חייבים <span className="text-amber-500">לעצור</span> את התכנון
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-800" style={{ fontFamily: 'Rubik, sans-serif' }}>
+                מה צפוי <span className="text-amber-600">לקהילה שלנו</span>
               </h2>
             </div>
           </RevealSection>
@@ -654,14 +645,14 @@ function HomePage() {
         <div className="max-w-5xl mx-auto px-4">
           <RevealSection>
             <div className="text-center mb-12">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-amber-600/10 border border-amber-600/20 text-amber-400 text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-700 text-sm font-medium mb-4">
                 מפת האזור
               </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                האזור שייפגע
+              <h2 className="text-3xl sm:text-4xl font-black text-stone-800" style={{ fontFamily: 'Rubik, sans-serif' }}>
+                האזור שנוגע לנו
               </h2>
-              <p className="text-gray-400 mt-3 max-w-2xl mx-auto">
-                הקו האדום מציג את מסלול כביש 553 המתוכנן. האזור המסומן הוא האזור שייפגע ישירות מהאוטוסטרדה.
+              <p className="text-stone-500 mt-3 max-w-2xl mx-auto">
+                הקו הכתום מציג את מסלול כביש 553 המתוכנן. האזור המסומן הוא תחום המועצה האזורית לב השרון.
               </p>
             </div>
           </RevealSection>
@@ -674,18 +665,18 @@ function HomePage() {
       <div className="red-line" />
 
       {/* ═══ PETITION ═══ */}
-      <section id="petition" className="py-20 sm:py-28 bg-gradient-to-b from-transparent via-amber-950/10 to-transparent">
+      <section id="petition" className="py-20 sm:py-28 bg-gradient-to-b from-transparent via-amber-100/60 to-transparent">
         <div className="max-w-2xl mx-auto px-4">
           <RevealSection>
             <div className="text-center mb-10">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-amber-600/10 border border-amber-600/20 text-amber-400 text-sm font-medium mb-4">
-                פעלו עכשיו
+              <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-700 text-sm font-medium mb-4">
+                הצטרפו אלינו
               </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                חתמו על <span className="text-amber-500">העצומה</span>
+              <h2 className="text-3xl sm:text-4xl font-black text-stone-800" style={{ fontFamily: 'Rubik, sans-serif' }}>
+                חתמו על <span className="text-amber-600">העצומה</span>
               </h2>
-              <p className="text-gray-400 mt-3">
-                יש לעצור את התכנון במתכונתו הנוכחית ולבחון חלופות שלא פוגעות בקהילה.
+              <p className="text-stone-500 mt-3">
+                יש לעצור את התכנון במתכונתו הנוכחית ולבחון חלופות שיאפשרו פיתוח תחבורתי מבלי לפגוע בקהילה, בביטחון, בבריאות ובמרחב הכפרי.
               </p>
             </div>
           </RevealSection>
@@ -707,11 +698,11 @@ function HomePage() {
               <div className="w-16 h-16 rounded-2xl bg-amber-600/15 flex items-center justify-center mx-auto mb-6 text-amber-500">
                 <IconMail />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-black text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                הישארו <span className="text-amber-500">מעודכנים</span>
+              <h2 className="text-3xl sm:text-4xl font-black text-stone-800" style={{ fontFamily: 'Rubik, sans-serif' }}>
+                הישארו <span className="text-amber-600">מעודכנים</span>
               </h2>
-              <p className="text-gray-400 mt-3">
-                הירשמו לניוזלטר שלנו וקבלו עדכונים ישירות על התקדמות המאבק, אירועים קהילתיים, ודרכי פעולה.
+              <p className="text-stone-500 mt-3">
+                הירשמו וקבלו עדכונים ישירות על אירועים קהילתיים, התפתחויות בתכנון, ודרכים להשתתף.
               </p>
             </div>
           </RevealSection>
@@ -736,11 +727,11 @@ function HomePage() {
               <div className="relative z-10">
                 <IconHome />
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4 mb-4" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                  לב השרון הוא בית,<br />לא מסדרון תחבורה
+                  גוש תל מונד, לב השרון הוא בית,<br />לא מסדרון תחבורה
                 </h2>
                 <p className="text-white/80 text-lg max-w-2xl mx-auto mb-8">
-                  תשתיות תחבורה חייבות לשרת את התושבים, ולא לפגוע בהם.
-                  יש לבחון חלופות שיאפשרו פיתוח תחבורתי מבלי לפגוע בקהילה, בביטחון, בבריאות ובמרחב הכפרי.
+                  התכנון הנוכחי משנה את אופיו של האזור באופן בלתי הפיך. תשתיות תחבורה חייבות לשרת את התושבים, ולא לפגוע בהם.
+                  יש לעצור את התכנון במתכונתו הנוכחית ולבחון חלופות שיאפשרו פיתוח תחבורתי מבלי לפגוע בקהילה, בביטחון, בבריאות ובמרחב הכפרי.
                 </p>
                 <a
                   href="#petition"
@@ -755,20 +746,20 @@ function HomePage() {
       </section>
 
       {/* ═══ FOOTER ═══ */}
-      <footer className="border-t border-amber-800/20 py-10">
+      <footer className="border-t border-amber-200 bg-amber-50 py-10">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-8 h-8 rounded-full bg-amber-600 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center">
               <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
                 <path d="M7 20h10" /><path d="M10 20c5.5-2.5.8-6.4 3-10" /><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z" /><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z" />
               </svg>
             </div>
-            <span className="font-bold text-amber-200" style={{ fontFamily: 'Rubik, sans-serif' }}>מציל את לב השרון — כביש 553</span>
+            <span className="font-bold text-stone-700" style={{ fontFamily: 'Rubik, sans-serif' }}>גוש תל מונד, לב השרון — כביש 553</span>
           </div>
-          <p className="text-amber-200/50 text-sm">
+          <p className="text-stone-500 text-sm">
             תושבי לב השרון ותל מונד למען עתיד הקהילה
           </p>
-          <p className="text-amber-200/30 text-xs mt-4">
+          <p className="text-stone-400 text-xs mt-4">
             © {new Date().getFullYear()} כל הזכויות שמורות
           </p>
         </div>
