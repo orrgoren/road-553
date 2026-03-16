@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@theme {
+  --color-danger: #dc2626;
+  --color-danger-dark: #991b1b;
+  --color-danger-light: #fef2f2;
+  --color-warning: #f59e0b;
+  --color-accent: #ea580c;
+  --color-dark: #1a1a2e;
+  --color-darker: #0f0f1a;
+  --font-family-heebo: "Heebo", sans-serif;
+  --font-family-rubik: "Rubik", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Heebo", sans-serif;
+  direction: rtl;
+  text-align: right;
+  background: #0f0f1a;
+  color: #f5f5f5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+  50% { box-shadow: 0 0 0 20px rgba(220, 38, 38, 0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-pulse-red {
+  animation: pulse-red 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.3s; }
+.reveal-delay-3 { transition-delay: 0.45s; }
+.reveal-delay-4 { transition-delay: 0.6s; }
+
+/* Card hover effects */
+.argument-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(220, 38, 38, 0.15);
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.argument-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.12);
+}
+
+/* Stat number gradient text */
+.stat-number {
+  background: linear-gradient(135deg, #dc2626, #ea580c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0f0f1a; }
+::-webkit-scrollbar-thumb { background: #dc2626; border-radius: 4px; }
+
+/* Input focus */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.3);
+}
+
+/* Petition progress bar */
+.petition-bar {
+  background: linear-gradient(90deg, #dc2626, #ea580c, #f59e0b);
+  transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Leaflet overrides */
+.leaflet-container {
+  background: #1a1a2e !important;
+  border-radius: 12px;
+}
+
+.leaflet-tile-pane {
+  filter: brightness(0.75) contrast(1.1) saturate(0.8) hue-rotate(180deg) invert(1);
+}
+
+/* Navbar */
+.nav-scrolled {
+  background: rgba(15, 15, 26, 0.95) !important;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Red line divider */
+.red-line {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #dc2626, #ea580c, transparent);
+}
