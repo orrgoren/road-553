@@ -5,9 +5,9 @@
   --color-danger-dark: #991b1b;
   --color-danger-light: #fef2f2;
   --color-warning: #f59e0b;
-  --color-accent: #ea580c;
-  --color-dark: #1a1a2e;
-  --color-darker: #0f0f1a;
+  --color-accent: #d97706;
+  --color-dark: #1a1505;
+  --color-darker: #0d0b05;
   --font-family-heebo: "Heebo", sans-serif;
   --font-family-rubik: "Rubik", sans-serif;
 }
@@ -29,8 +29,8 @@ body {
   font-family: "Heebo", sans-serif;
   direction: rtl;
   text-align: right;
-  background: #0f0f1a;
-  color: #f5f5f5;
+  background: #0d0b05;
+  color: #f5f0e8;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -46,9 +46,14 @@ body {
   to { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes pulse-red {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
-  50% { box-shadow: 0 0 0 20px rgba(220, 38, 38, 0); }
+@keyframes pulse-amber {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.7); }
+  50% { box-shadow: 0 0 0 20px rgba(217, 119, 6, 0); }
+}
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 @keyframes float {
@@ -77,7 +82,15 @@ body {
 }
 
 .animate-pulse-red {
-  animation: pulse-red 2s infinite;
+  animation: pulse-amber 2s infinite;
+}
+
+.animate-pulse-amber {
+  animation: pulse-amber 2s infinite;
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s infinite;
 }
 
 .animate-float {
@@ -109,20 +122,20 @@ body {
 /* Card hover effects */
 .argument-card {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(220, 38, 38, 0.15);
-  background: rgba(26, 26, 46, 0.8);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  background: rgba(20, 15, 5, 0.85);
   backdrop-filter: blur(12px);
 }
 
 .argument-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(220, 38, 38, 0.5);
-  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.12);
+  border-color: rgba(217, 119, 6, 0.55);
+  box-shadow: 0 20px 40px rgba(217, 119, 6, 0.15);
 }
 
 /* Stat number gradient text */
 .stat-number {
-  background: linear-gradient(135deg, #dc2626, #ea580c);
+  background: linear-gradient(135deg, #d97706, #f59e0b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -130,41 +143,63 @@ body {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #0f0f1a; }
-::-webkit-scrollbar-thumb { background: #dc2626; border-radius: 4px; }
+::-webkit-scrollbar-track { background: #0d0b05; }
+::-webkit-scrollbar-thumb { background: #d97706; border-radius: 4px; }
 
 /* Input focus */
 input:focus, textarea:focus {
   outline: none;
-  border-color: #dc2626 !important;
-  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.3);
+  border-color: #d97706 !important;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.25);
 }
 
 /* Petition progress bar */
 .petition-bar {
-  background: linear-gradient(90deg, #dc2626, #ea580c, #f59e0b);
+  background: linear-gradient(90deg, #92400e, #d97706, #f59e0b);
   transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Leaflet overrides */
 .leaflet-container {
-  background: #1a1a2e !important;
+  background: #1a1505 !important;
   border-radius: 12px;
 }
 
 .leaflet-tile-pane {
-  filter: brightness(0.75) contrast(1.1) saturate(0.8) hue-rotate(180deg) invert(1);
+  filter: brightness(0.8) contrast(1.1) saturate(0.9);
 }
 
 /* Navbar */
-.nav-scrolled {
-  background: rgba(15, 15, 26, 0.95) !important;
+.nav-light {
+  background: rgba(255, 252, 245, 0.97) !important;
   backdrop-filter: blur(20px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Red line divider */
+.nav-scrolled {
+  background: rgba(255, 252, 245, 0.98) !important;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Amber line divider */
 .red-line {
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #dc2626, #ea580c, transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d97706, #f59e0b, transparent);
+  opacity: 0.6;
+}
+
+/* Hero landscape overlay */
+.hero-landscape {
+  background:
+    radial-gradient(ellipse 90% 40% at 50% 42%, rgba(255, 220, 100, 0.25) 0%, transparent 70%),
+    linear-gradient(180deg,
+      #4a7a9b 0%,
+      #7a6040 20%,
+      #b08030 38%,
+      #c9a040 52%,
+      #8b6220 68%,
+      #4a3010 85%,
+      #1e1408 100%
+    );
 }

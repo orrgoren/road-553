@@ -147,14 +147,14 @@ function ArgumentCard({ icon, title, text, index }: { icon: React.ReactNode; tit
   return (
     <div ref={ref} className={`reveal ${delayClass} argument-card rounded-2xl p-6 lg:p-8`}>
       <div className="flex items-center gap-4 mb-4">
-        <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-red-600/15 flex items-center justify-center text-red-500">
+        <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-amber-600/15 flex items-center justify-center text-amber-500">
           {icon}
         </div>
         <h3 className="text-lg lg:text-xl font-bold text-white leading-tight" style={{ fontFamily: 'Rubik, sans-serif' }}>
           {title}
         </h3>
       </div>
-      <p className="text-gray-400 leading-relaxed text-sm lg:text-base m-0">
+      <p className="text-amber-100/60 leading-relaxed text-sm lg:text-base m-0">
         {text}
       </p>
     </div>
@@ -208,7 +208,7 @@ function InteractiveMap() {
       ]
 
       L.polyline(roadPath, {
-        color: '#dc2626',
+        color: '#d97706',
         weight: 5,
         opacity: 0.85,
         dashArray: '10, 8',
@@ -216,7 +216,7 @@ function InteractiveMap() {
 
       // Key markers
       const redIcon = L.divIcon({
-        html: '<div style="width:14px;height:14px;background:#dc2626;border:2px solid #fff;border-radius:50%;box-shadow:0 0 10px rgba(220,38,38,0.6)"></div>',
+        html: '<div style="width:14px;height:14px;background:#d97706;border:2px solid #fff;border-radius:50%;box-shadow:0 0 10px rgba(220,38,38,0.6)"></div>',
         iconSize: [14, 14],
         iconAnchor: [7, 7],
         className: '',
@@ -231,7 +231,7 @@ function InteractiveMap() {
       markers.forEach(m => {
         L.marker(m.pos, { icon: redIcon })
           .addTo(map)
-          .bindPopup(`<div style="font-family:Heebo;direction:rtl;text-align:right;font-weight:700;color:#dc2626">${m.label}</div>`)
+          .bindPopup(`<div style="font-family:Heebo;direction:rtl;text-align:right;font-weight:700;color:#d97706">${m.label}</div>`)
       })
 
       // Affected area polygon
@@ -243,8 +243,8 @@ function InteractiveMap() {
           [32.3, 34.83],
         ],
         {
-          color: '#dc2626',
-          fillColor: '#dc2626',
+          color: '#d97706',
+          fillColor: '#d97706',
           fillOpacity: 0.08,
           weight: 1,
           dashArray: '5, 5',
@@ -265,10 +265,10 @@ function InteractiveMap() {
   }, [])
 
   return (
-    <div className="relative rounded-2xl overflow-hidden border border-red-600/20">
+    <div className="relative rounded-2xl overflow-hidden border border-amber-600/20">
       <div ref={mapRef} style={{ height: '400px', width: '100%' }} />
-      <div className="absolute bottom-4 right-4 bg-black/80 backdrop-blur-sm rounded-lg px-4 py-2 text-sm text-gray-300 border border-red-600/30">
-        <span className="inline-block w-3 h-0.5 bg-red-500 ml-2 align-middle"></span>
+      <div className="absolute bottom-4 right-4 bg-black/80 backdrop-blur-sm rounded-lg px-4 py-2 text-sm text-amber-200 border border-amber-600/30">
+        <span className="inline-block w-3 h-0.5 bg-amber-500 ml-2 align-middle"></span>
         מסלול כביש 553 המתוכנן
       </div>
     </div>
@@ -300,7 +300,7 @@ function NewsletterForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
       <div className="relative flex-1">
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 text-amber-600/60">
           <IconMail />
         </div>
         <input
@@ -309,13 +309,13 @@ function NewsletterForm() {
           value={email}
           onChange={e => setEmail(e.target.value)}
           placeholder="הכניסו את כתובת המייל שלכם"
-          className="w-full pr-12 pl-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 text-base transition-all"
+          className="w-full pr-12 pl-4 py-3.5 rounded-xl bg-white/5 border border-amber-600/20 text-white placeholder-amber-100/40 text-base transition-all"
           dir="rtl"
         />
       </div>
       <button
         type="submit"
-        className="px-8 py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-base transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-red-600/25 cursor-pointer whitespace-nowrap"
+        className="px-8 py-3.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-base transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-amber-600/25 cursor-pointer whitespace-nowrap"
       >
         הרשמה לעדכונים
       </button>
@@ -369,7 +369,7 @@ function PetitionForm() {
               value={name}
               onChange={e => setName(e.target.value)}
               placeholder="שם מלא"
-              className="flex-1 px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 text-base transition-all"
+              className="flex-1 px-4 py-3.5 rounded-xl bg-white/5 border border-amber-600/20 text-white placeholder-amber-100/40 text-base transition-all"
               dir="rtl"
             />
             <input
@@ -378,13 +378,13 @@ function PetitionForm() {
               value={city}
               onChange={e => setCity(e.target.value)}
               placeholder="יישוב"
-              className="flex-1 px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 text-base transition-all"
+              className="flex-1 px-4 py-3.5 rounded-xl bg-white/5 border border-amber-600/20 text-white placeholder-amber-100/40 text-base transition-all"
               dir="rtl"
             />
           </div>
           <button
             type="submit"
-            className="w-full py-4 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-lg transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-red-600/25 cursor-pointer animate-pulse-red"
+            className="w-full py-4 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-black text-lg transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-amber-600/25 cursor-pointer animate-pulse-amber"
           >
             חתמו על העצומה
           </button>
@@ -405,34 +405,49 @@ function StickyNav() {
   }, [])
 
   const links = [
-    { href: '#about', label: 'על הכביש' },
-    { href: '#arguments', label: 'למה להתנגד' },
-    { href: '#map', label: 'מפה' },
-    { href: '#petition', label: 'עצומה' },
-    { href: '#newsletter', label: 'עדכונים' },
+    { href: '#about', label: 'ראשי' },
+    { href: '#arguments', label: 'אודות' },
+    { href: '#map', label: 'תהליך הממשלה' },
+    { href: '#petition', label: 'גלריה' },
+    { href: '#newsletter', label: 'צור קשר' },
   ]
 
   return (
-    <nav className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${scrolled ? 'nav-scrolled py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${scrolled ? 'nav-scrolled py-3' : 'nav-light py-3'}`}>
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center animate-pulse-red">
-            <span className="text-white font-black text-sm">553</span>
-          </div>
-          <span className="font-black text-white text-lg hidden sm:block" style={{ fontFamily: 'Rubik, sans-serif' }}>
-            עצרו את הכביש
-          </span>
+        {/* Left: CTA button (RTL = left side visually) */}
+        <div className="flex items-center gap-3">
+          <a
+            href="#petition"
+            className="hidden sm:inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm no-underline transition-all hover:shadow-md hover:shadow-amber-500/25"
+          >
+            להצטרף לרשימה
+          </a>
         </div>
-        <div className="flex items-center gap-1 sm:gap-4">
+
+        {/* Center: Nav links */}
+        <div className="flex items-center gap-1 sm:gap-3">
           {links.map(link => (
             <a
               key={link.href}
               href={link.href}
-              className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors px-2 py-1 rounded-lg hover:bg-white/5 no-underline"
+              className="text-xs sm:text-sm text-gray-700 hover:text-amber-700 transition-colors px-2 py-1 rounded-lg hover:bg-amber-50 no-underline font-medium"
             >
               {link.label}
             </a>
           ))}
+        </div>
+
+        {/* Right: Logo (RTL = right side) */}
+        <div className="flex items-center gap-2">
+          <span className="font-black text-gray-800 text-base sm:text-lg hidden sm:block" style={{ fontFamily: 'Rubik, sans-serif' }}>
+            מציל את תל מונד לב השרון
+          </span>
+          <div className="w-9 h-9 rounded-full bg-amber-500 flex items-center justify-center flex-shrink-0">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+              <path d="M7 20h10" /><path d="M10 20c5.5-2.5.8-6.4 3-10" /><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z" /><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z" />
+            </svg>
+          </div>
         </div>
       </div>
     </nav>
@@ -496,81 +511,82 @@ function HomePage() {
 
       {/* ═══ HERO ═══ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* BG effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f1a] via-[#1a1020] to-[#1a0a0a]" />
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-red-600/30 rounded-full blur-[120px]" />
-          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-orange-600/20 rounded-full blur-[100px]" />
+        {/* Landscape background gradient */}
+        <div className="absolute inset-0 hero-landscape" />
+
+        {/* Warm horizon glow */}
+        <div className="absolute inset-0">
+          <div className="absolute top-[38%] left-1/2 -translate-x-1/2 w-[80%] h-48 bg-amber-300/20 rounded-full blur-[80px]" />
         </div>
-        {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-          backgroundSize: '60px 60px'
+
+        {/* Bottom dark fade for text readability */}
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%)'
         }} />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-32">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-600/15 border border-red-600/30 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-            <span className="text-red-400 text-sm font-medium">דחוף — התכנון מתקדם עכשיו</span>
+          {/* Green community badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-700/70 border border-emerald-500/50 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-green"></span>
+            <span className="text-emerald-200 text-sm font-medium">יוזמת תושבים — לב השרון וגוש תל מונד</span>
           </div>
 
           <h1
-            className="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-tight mb-6 animate-fade-in-up"
-            style={{ fontFamily: 'Rubik, sans-serif', animationDelay: '0.4s' }}
+            className="text-4xl sm:text-5xl md:text-7xl font-black leading-tight mb-6 animate-fade-in-up"
+            style={{ fontFamily: 'Rubik, sans-serif', animationDelay: '0.4s', color: '#fde68a', textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
           >
-            כביש 553 עומד להפוך
+            לא בתוואי הזה
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-l from-red-500 via-red-600 to-orange-500 animate-gradient">
-              לאוטוסטרדה ארצית
-            </span>
+            <span style={{ color: '#fcd34d' }}>תושבי לב השרון וגוש</span>
             <br />
-            בלב הבית שלנו
+            <span style={{ color: '#fde68a' }}>תל מונד מציל</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-10 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.6s' }}>
-            במקום כביש שמשרת את התושבים, המרחב שלנו יהפוך למעבר עבור תנועה שאינה קשורה לחיים כאן.
+          <p className="text-lg sm:text-xl text-amber-100/90 max-w-3xl mx-auto mb-10 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.6s', textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>
+            בכביש 553 והאזור החקלאי הסמוך, יתגנב בהחלטות הממשלה שינוי שישפיע לרעה על תושבי
+            האזור ויגרום לנזק להם לבלתי חזור.
             <br />
-            <strong className="text-white">גוש תל מונד, לב השרון הוא בית — לא מסדרון תחבורה.</strong>
+            <strong className="text-white">התאחדו אלינו לפני שהחלטות יתקבלו על ידי הגורמים לכך.</strong>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             <a
               href="#petition"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-lg no-underline transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-red-600/30 animate-pulse-red"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-black text-lg no-underline transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-500/40 animate-pulse-amber"
             >
-              חתמו על העצומה
+              להצטרף לאלינו
             </a>
             <a
               href="#arguments"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/20 hover:border-white/40 text-white font-bold text-lg no-underline transition-all hover:-translate-y-1 hover:bg-white/5"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/40 hover:border-white/70 text-white font-bold text-lg no-underline transition-all hover:-translate-y-1 hover:bg-white/10 backdrop-blur-sm"
             >
-              למה להתנגד?
+              לדעת עוד
             </a>
           </div>
 
           {/* Scroll indicator */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-            <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2">
-              <div className="w-1.5 h-3 rounded-full bg-white/40 animate-pulse"></div>
+            <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
+              <div className="w-1.5 h-3 rounded-full bg-white/50 animate-pulse"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ═══ STATS BAR ═══ */}
-      <section className="relative py-16 border-y border-red-600/20 bg-[#12121f]">
+      <section className="relative py-16 border-y border-amber-600/20 bg-[#141005]">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
           <div ref={stats[0].ref}>
             <div className="stat-number text-5xl sm:text-6xl font-black">{stats[0].count}</div>
-            <div className="text-gray-400 text-sm mt-2">נתיבים מתוכננים</div>
+            <div className="text-amber-200/60 text-sm mt-2">נתיבים מתוכננים</div>
           </div>
           <div ref={stats[1].ref}>
             <div className="stat-number text-5xl sm:text-6xl font-black">{stats[1].count}</div>
-            <div className="text-gray-400 text-sm mt-2">מספר הכביש</div>
+            <div className="text-amber-200/60 text-sm mt-2">מספר הכביש</div>
           </div>
           <div ref={stats[2].ref}>
             <div className="stat-number text-5xl sm:text-6xl font-black">{stats[2].count}</div>
-            <div className="text-gray-400 text-sm mt-2">כבישים ארציים מחוברים</div>
+            <div className="text-amber-200/60 text-sm mt-2">כבישים ארציים מחוברים</div>
           </div>
         </div>
       </section>
@@ -580,12 +596,12 @@ function HomePage() {
         <div className="max-w-5xl mx-auto px-4">
           <RevealSection>
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-red-600/10 border border-red-600/20 text-red-400 text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-amber-600/10 border border-amber-600/20 text-amber-400 text-sm font-medium mb-4">
                 מה מתוכנן?
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>
                 כביש 553 לא ישתפר —<br />
-                <span className="text-red-500">הוא ישתנה לחלוטין</span>
+                <span className="text-amber-500">הוא ישתנה לחלוטין</span>
               </h2>
             </div>
           </RevealSection>
@@ -593,8 +609,8 @@ function HomePage() {
           <RevealSection delay="reveal-delay-1">
             <div className="argument-card rounded-2xl p-8 lg:p-10 mb-8">
               <p className="text-gray-300 text-lg leading-loose m-0">
-                כביש 553 מתוכנן להתרחב לכביש של <strong className="text-red-400">6 עד 8 נתיבים</strong> שישמש כציר רוחב ארצי
-                בין כבישים 2, 4 ו-6. המשמעות איננה שיפור של כביש מקומי, אלא <strong className="text-red-400">הפיכתו למסדרון
+                כביש 553 מתוכנן להתרחב לכביש של <strong className="text-amber-400">6 עד 8 נתיבים</strong> שישמש כציר רוחב ארצי
+                בין כבישים 2, 4 ו-6. המשמעות איננה שיפור של כביש מקומי, אלא <strong className="text-amber-400">הפיכתו למסדרון
                 תחבורה ארצי</strong> שיזרים תנועה כבדה דרך לב השרון ותל מונד.
               </p>
               <p className="text-gray-300 text-lg leading-loose mt-4 mb-0">
@@ -614,11 +630,11 @@ function HomePage() {
         <div className="max-w-6xl mx-auto px-4">
           <RevealSection>
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-red-600/10 border border-red-600/20 text-red-400 text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-amber-600/10 border border-amber-600/20 text-amber-400 text-sm font-medium mb-4">
                 8 סיבות קריטיות
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                למה חייבים <span className="text-red-500">לעצור</span> את התכנון
+                למה חייבים <span className="text-amber-500">לעצור</span> את התכנון
               </h2>
             </div>
           </RevealSection>
@@ -638,7 +654,7 @@ function HomePage() {
         <div className="max-w-5xl mx-auto px-4">
           <RevealSection>
             <div className="text-center mb-12">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-red-600/10 border border-red-600/20 text-red-400 text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-amber-600/10 border border-amber-600/20 text-amber-400 text-sm font-medium mb-4">
                 מפת האזור
               </span>
               <h2 className="text-3xl sm:text-4xl font-black text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>
@@ -658,15 +674,15 @@ function HomePage() {
       <div className="red-line" />
 
       {/* ═══ PETITION ═══ */}
-      <section id="petition" className="py-20 sm:py-28 bg-gradient-to-b from-transparent via-red-950/10 to-transparent">
+      <section id="petition" className="py-20 sm:py-28 bg-gradient-to-b from-transparent via-amber-950/10 to-transparent">
         <div className="max-w-2xl mx-auto px-4">
           <RevealSection>
             <div className="text-center mb-10">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-red-600/10 border border-red-600/20 text-red-400 text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-amber-600/10 border border-amber-600/20 text-amber-400 text-sm font-medium mb-4">
                 פעלו עכשיו
               </span>
               <h2 className="text-3xl sm:text-4xl font-black text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                חתמו על <span className="text-red-500">העצומה</span>
+                חתמו על <span className="text-amber-500">העצומה</span>
               </h2>
               <p className="text-gray-400 mt-3">
                 יש לעצור את התכנון במתכונתו הנוכחית ולבחון חלופות שלא פוגעות בקהילה.
@@ -688,11 +704,11 @@ function HomePage() {
         <div className="max-w-2xl mx-auto px-4">
           <RevealSection>
             <div className="text-center mb-10">
-              <div className="w-16 h-16 rounded-2xl bg-red-600/15 flex items-center justify-center mx-auto mb-6 text-red-500">
+              <div className="w-16 h-16 rounded-2xl bg-amber-600/15 flex items-center justify-center mx-auto mb-6 text-amber-500">
                 <IconMail />
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                הישארו <span className="text-red-500">מעודכנים</span>
+                הישארו <span className="text-amber-500">מעודכנים</span>
               </h2>
               <p className="text-gray-400 mt-3">
                 הירשמו לניוזלטר שלנו וקבלו עדכונים ישירות על התקדמות המאבק, אירועים קהילתיים, ודרכי פעולה.
@@ -712,9 +728,9 @@ function HomePage() {
         <div className="max-w-5xl mx-auto px-4">
           <RevealSection>
             <div className="relative rounded-3xl overflow-hidden p-10 sm:p-16 text-center" style={{
-              background: 'linear-gradient(135deg, #991b1b 0%, #dc2626 40%, #ea580c 100%)'
+              background: 'linear-gradient(135deg, #78350f 0%, #d97706 40%, #f59e0b 100%)'
             }}>
-              <div className="absolute inset-0 opacity-10" style={{
+              <div className="absolute inset-0 opacity-15" style={{
                 backgroundImage: 'radial-gradient(circle at 30% 50%, white, transparent 50%), radial-gradient(circle at 70% 50%, white, transparent 50%)'
               }} />
               <div className="relative z-10">
@@ -728,7 +744,7 @@ function HomePage() {
                 </p>
                 <a
                   href="#petition"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-red-700 font-black text-lg no-underline transition-all hover:-translate-y-1 hover:shadow-xl"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-amber-700 font-black text-lg no-underline transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
                   הצטרפו למאבק
                 </a>
@@ -739,18 +755,20 @@ function HomePage() {
       </section>
 
       {/* ═══ FOOTER ═══ */}
-      <footer className="border-t border-white/10 py-10">
+      <footer className="border-t border-amber-800/20 py-10">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center">
-              <span className="text-white font-black text-xs">553</span>
+            <div className="w-8 h-8 rounded-full bg-amber-600 flex items-center justify-center">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                <path d="M7 20h10" /><path d="M10 20c5.5-2.5.8-6.4 3-10" /><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z" /><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z" />
+              </svg>
             </div>
-            <span className="font-bold text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>עצרו את כביש 553</span>
+            <span className="font-bold text-amber-200" style={{ fontFamily: 'Rubik, sans-serif' }}>מציל את לב השרון — כביש 553</span>
           </div>
-          <p className="text-gray-500 text-sm">
+          <p className="text-amber-200/50 text-sm">
             תושבי לב השרון ותל מונד למען עתיד הקהילה
           </p>
-          <p className="text-gray-600 text-xs mt-4">
+          <p className="text-amber-200/30 text-xs mt-4">
             © {new Date().getFullYear()} כל הזכויות שמורות
           </p>
         </div>
