@@ -239,7 +239,7 @@ function PetitionForm() {
   const [signCount, setSignCount] = useState<number | null>(null)
 
   useEffect(() => {
-    fetch('/api/count').then(r => r.json()).then(({ count }) => setSignCount(count))
+    fetch('/api/count', { cache: 'no-store' }).then(r => r.json()).then(({ count }) => setSignCount(count))
   }, [])
   const goal = 10000
 
