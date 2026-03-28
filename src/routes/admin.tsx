@@ -66,11 +66,12 @@ function AdminPage() {
   const deletePerson = async (id: number, name: string) => {
     if (!confirm(`למחוק את ${name}?`)) return
     const pw = sessionStorage.getItem(PW_KEY) ?? ''
-    await fetch(`/api/people/${id}`, {
-      method: 'DELETE',
+    const res = await fetch(`/api/people/${id}/delete`, {
+      method: 'POST',
       headers: { 'x-admin-password': pw },
     })
-    setPeople(prev => prev.filter(p => p.id !== id))
+    if (res.ok) setPeople(prev => prev.filter(p => p.id !== id))
+    else alert('שגיאה במחיקה')
   }
 
   if (!authed) {
