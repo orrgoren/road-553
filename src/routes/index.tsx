@@ -220,16 +220,42 @@ function NewsletterForm() {
 }
 
 /* ─── Petition Form ─── */
+const INVOLVEMENTS = [
+  'לשתף מידע עם שכנים ומכרים',
+  'להגיש התנגדות רשמית',
+  'להגיע לאירועים ומפגשים',
+  'קיימת מומחיות מקצועית רלוונטית',
+  'לתרום לקרן המאבק',
+] as const
+
 function PetitionForm() {
   const [name, setName] = useState('')
   const [city, setCity] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [involvements, setInvolvements] = useState<Set<string>>(new Set())
   const [signed, setSigned] = useState(false)
   const [signCount, setSignCount] = useState(4837)
   const goal = 10000
 
-  const handleSign = (e: React.FormEvent) => {
+  const toggleInvolvement = (item: string) => {
+    setInvolvements(prev => {
+      const next = new Set(prev)
+      next.has(item) ? next.delete(item) : next.add(item)
+      return next
+    })
+  }
+
+  const handleSign = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (name && city) { setSigned(true); setSignCount(prev => prev + 1) }
+    if (!name || !city || !email) return
+    await fetch('/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, city, email, phone, involvements: Array.from(involvements) }),
+    })
+    setSigned(true)
+    setSignCount(prev => prev + 1)
   }
 
   const percentage = Math.min((signCount / goal) * 100, 100)
@@ -267,6 +293,36 @@ function PetitionForm() {
               className="flex-1 px-4 py-3.5 rounded-xl bg-red-50 border border-red-200 text-stone-800 placeholder-stone-400 text-base transition-all"
               dir="rtl"
             />
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email" required value={email} onChange={e => setEmail(e.target.value)}
+              placeholder="כתובת אימייל"
+              className="flex-1 px-4 py-3.5 rounded-xl bg-red-50 border border-red-200 text-stone-800 placeholder-stone-400 text-base transition-all"
+              dir="rtl"
+            />
+            <input
+              type="tel" value={phone} onChange={e => setPhone(e.target.value)}
+              placeholder="טלפון (אופציונלי)"
+              className="flex-1 px-4 py-3.5 rounded-xl bg-red-50 border border-red-200 text-stone-800 placeholder-stone-400 text-base transition-all"
+              dir="rtl"
+            />
+          </div>
+          <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3">
+            <p className="text-sm font-semibold text-stone-700 mb-2">אני מעוניין/ת גם:</p>
+            <div className="space-y-2">
+              {INVOLVEMENTS.map(item => (
+                <label key={item} className="flex items-center gap-3 cursor-pointer group" dir="rtl">
+                  <input
+                    type="checkbox"
+                    checked={involvements.has(item)}
+                    onChange={() => toggleInvolvement(item)}
+                    className="w-4 h-4 rounded border-red-300 text-red-600 accent-red-600 flex-shrink-0"
+                  />
+                  <span className="text-sm text-stone-600 group-hover:text-stone-800 transition-colors">{item}</span>
+                </label>
+              ))}
+            </div>
           </div>
           <button
             type="submit"
@@ -341,7 +397,7 @@ function WarnSection({ id, label, title, children }: { id?: string; label: strin
   return (
     <div id={id} ref={ref} className="reveal">
       <div className="border-r-4 border-red-600 pr-6 mb-4">
-        <span className="text-xs font-bold uppercase tracking-widest text-red-500 mb-2 block">{label}</span>
+        <span className="text-lg font-bold uppercase tracking-widest text-red-500 mb-2 block">{label}</span>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-800 leading-tight" style={{ fontFamily: 'Rubik, sans-serif' }}>
           {title}
         </h2>
@@ -472,7 +528,7 @@ function HomePage() {
         <div className="max-w-4xl mx-auto px-4">
           <WarnSection label="מה עומד לקרות" title="כביש במרחב כפרי הופך לאוטוסטרדה ארצית">
             <p>
-              במקום כביש שמשרת את תושבי האזור — מתוכנן כאן <strong>ציר רוחב ארצי מפלצתי</strong> שיחבר בין כבישים 2, 4 ו־6.
+              מתוכנן כאן <strong>ציר רוחב ארצי מפלצתי</strong> שיחבר בין כבישים 2, 4 ו־6 - במקום כביש שמשרת את תושבי האזור.
             </p>
             <BulletList items={[
               '6 עד 8 נתיבים',
@@ -510,9 +566,9 @@ function HomePage() {
                 <span className="text-red-400">והפקרת החוסן היישובי</span>
               </h2>
               <p className="text-stone-400 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-                הפיכת כביש 553 ל&ldquo;צינור חיים&rdquo; יחיד ובלעדי{' '}
+                <strong className="text-white">הפיכת</strong> כביש 553 ל&ldquo;צינור חיים&rdquo; יחיד ובלעדי{' '}
                 <span className="text-stone-300 font-semibold">(Single Point of Failure)</span>{' '}
-                עבור עשרות אלפי תושבים — היא מחדל ביטחוני חמור.
+                עבור עשרות אלפי תושבים — <br /><strong class="text-white">היא מחדל ביטחוני חמור</strong>.
               </p>
             </div>
           </RevealSection>
@@ -564,7 +620,7 @@ function HomePage() {
                   סיכון ביטחוני — קרבה לקו התפר
                 </h3>
                 <p className="text-stone-400 leading-relaxed text-sm flex-1">
-                  יצירת אוטוסטרדה חדירה המאפשרת הגעה מהירה ממוקדי חיכוך <strong className="text-stone-200 font-semibold">(טירה, טייבה, קלנסואה)</strong> אל עומק היישובים הכפריים תוך דקות — ללא מעטפת הגנה ותוך פירוק החיץ החקלאי.
+                  יצירת אוטוסטרדה חדירה המאפשרת הגעה מהירה ממוקדי חיכוך <strong className="text-stone-200 font-semibold">(יו״ש וקו התפר)</strong> אל עומק היישובים הכפריים תוך דקות — ללא מעטפת הגנה ותוך פירוק החיץ החקלאי.
                 </p>
               </div>
             </RevealSection>
@@ -625,8 +681,7 @@ function HomePage() {
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-5" style={{ fontFamily: 'Rubik, sans-serif' }}>
                 כביש מהיר =
-                <br />
-                <span className="text-red-500">גם נתיב מילוט</span>
+                <span className="text-red-500 mr-3">נתיב מילוט</span>
               </h2>
               <p className="text-stone-400 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
                 מעבר לכל הפגיעה הסביבתית והקהילתית — יש כאן גם{' '}
@@ -697,14 +752,14 @@ function HomePage() {
         <div className="max-w-4xl mx-auto px-4">
           <RevealSection>
             <WarnSection label="איך זה פוגע בך אישית" title="זה לא רחוק. זה נוגע אליך.">
-              <p>המשמעות של התוכנית הזו לא תישאר על הנייר. <strong>היא תיכנס לחיים שלנו:</strong></p>
+              <p>הילדים שלנו גדלים במרחב פתוח ובטוח – הולכים לחברים, נוסעים בין יישובים, בלי לחשוב פעמיים. <strong>זו איכות חיים. הכביש הזה ישנה את זה מהיסוד.</strong></p>
               <BulletList items={[
-                'ילדים שיצטרכו לחצות כביש סואן כדי להגיע לחברים',
-                'קושי אמיתי להגיע לבתי ספר שנמצאים מחוץ ליישוב',
-                'קהילות שיתנתקו זו מזו',
-                'ירידה באיכות החיים ובערך הבתים',
+                'הדרך לבית הספר תהפוך לחצייה של ציר מהיר ומסוכן',
+                'ילדים יהיו תלויים בהסעות ובתיאומים במקום בעצמאות',
+                'פעולות יומיומיות – קניות, רופא, חוג – ידרשו תכנון ועקיפות',
+                'מרחב פתוח ונגיש יהפוך למרחב מקוטע',
               ]} />
-              <p>מה שהיה מרחב כפרי פתוח — <strong>יהפוך לציר תנועה רועש ומזהם.</strong></p>
+              <p className="border-r-2 border-red-400 pr-4"><strong>זו פגיעה בעצמאות הילדים, בתחושת הביטחון שלהם, ובדרך החיים שרצינו להעביר להם.</strong></p>
             </WarnSection>
           </RevealSection>
         </div>
@@ -793,32 +848,6 @@ function HomePage() {
           <RevealSection delay="reveal-delay-1">
             <div className="rounded-2xl p-6 sm:p-8 border border-red-200 bg-white shadow-sm">
               <PetitionForm />
-            </div>
-          </RevealSection>
-        </div>
-      </section>
-
-      <div className="red-line" />
-
-      {/* ═══ NEWSLETTER ═══ */}
-      <section className="py-20 sm:py-28 bg-red-50">
-        <div className="max-w-2xl mx-auto px-4">
-          <RevealSection>
-            <div className="text-center mb-10">
-              <div className="w-16 h-16 rounded-2xl bg-red-100 flex items-center justify-center mx-auto mb-6 text-red-500">
-                <IconMail />
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-black text-stone-800" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                הישארו <span className="text-red-600">מעודכנים</span>
-              </h2>
-              <p className="text-stone-500 mt-3">
-                הירשמו וקבלו עדכונים ישירות על אירועים קהילתיים, התפתחויות בתכנון, ודרכים להשתתף.
-              </p>
-            </div>
-          </RevealSection>
-          <RevealSection delay="reveal-delay-1">
-            <div className="rounded-2xl p-6 sm:p-8 border border-red-200 bg-white shadow-sm">
-              <NewsletterForm />
             </div>
           </RevealSection>
         </div>

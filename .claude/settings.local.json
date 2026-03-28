@@ -4,7 +4,14 @@
       "WebFetch(domain:app.base44.com)",
       "Bash(npm run:*)",
       "WebFetch(domain:overpass-api.de)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm approve-builds:*)",
+      "Bash(pnpm rebuild:*)",
+      "Bash(pnpm install:*)",
+      "Bash(npx tsx:*)",
+      "Bash(pnpm exec:*)",
+      "Bash(pnpm remove:*)"
     ]
   }
 }
