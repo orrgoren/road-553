@@ -20,6 +20,7 @@ function AdminPage() {
   const [password, setPassword] = useState('')
   const [authed, setAuthed] = useState(false)
   const [authError, setAuthError] = useState(false)
+  const [serverError, setServerError] = useState('')
   const [people, setPeople] = useState<Person[]>([])
   const [loading, setLoading] = useState(false)
   const [filter, setFilter] = useState<'all' | 'pending' | 'dealt'>('all')
@@ -32,12 +33,19 @@ function AdminPage() {
   const fetchPeople = async (pw: string) => {
     setLoading(true)
     setAuthError(false)
-    const res = await fetch('/api/people', { headers: { 'x-admin-password': pw } })
-    if (res.status === 401) { setAuthError(true); setLoading(false); sessionStorage.removeItem(PW_KEY); return }
-    setPeople(await res.json())
-    sessionStorage.setItem(PW_KEY, pw)
-    setAuthed(true)
-    setLoading(false)
+    try {
+      const res = await fetch('/api/people', { headers: { 'x-admin-password': pw } })
+      if (res.status === 401) { sessionStorage.removeItem(PW_KEY); setAuthError(true); return }
+      if (!res.ok) throw new Error(`שגיאת שרת ${res.status}`)
+      setPeople(await res.json())
+      sessionStorage.setItem(PW_KEY, pw)
+      setAuthed(true)
+    } catch (e) {
+      setAuthError(true)
+      setServerError(e instanceof Error ? e.message : 'שגיאה בחיבור לשרת')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const handleLogin = (e: React.FormEvent) => {
@@ -68,7 +76,7 @@ function AdminPage() {
             autoFocus
             className="w-full px-4 py-3 rounded-xl border border-stone-200 bg-stone-50 text-stone-800 placeholder-stone-400 text-base"
           />
-          {authError && <p className="text-red-600 text-sm">סיסמה שגויה</p>}
+          {authError && <p className="text-red-600 text-sm">{serverError || 'סיסמה שגויה'}</p>}
           <button
             type="submit"
             disabled={loading}
