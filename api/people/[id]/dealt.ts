@@ -4,6 +4,10 @@ import { initDb } from '../../_db'
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'PATCH') return res.status(405).end()
 
+  if (req.headers['x-admin-password'] !== process.env.ADMIN_PASSWORD) {
+    return res.status(401).json({ error: 'Unauthorized' })
+  }
+
   const db = await initDb()
   const result = await db.execute({
     sql: 'SELECT dealt FROM registrations WHERE id = ?',

@@ -235,7 +235,11 @@ function PetitionForm() {
   const [phone, setPhone] = useState('')
   const [involvements, setInvolvements] = useState<Set<string>>(new Set())
   const [signed, setSigned] = useState(false)
-  const [signCount, setSignCount] = useState(4837)
+  const [signCount, setSignCount] = useState<number | null>(null)
+
+  useEffect(() => {
+    fetch('/api/count').then(r => r.json()).then(({ count }) => setSignCount(count))
+  }, [])
   const goal = 10000
 
   const toggleInvolvement = (item: string) => {
@@ -255,17 +259,19 @@ function PetitionForm() {
       body: JSON.stringify({ name, city, email, phone, involvements: Array.from(involvements) }),
     })
     setSigned(true)
-    setSignCount(prev => prev + 1)
+    setSignCount(prev => (prev ?? 0) + 1)
   }
 
-  const percentage = Math.min((signCount / goal) * 100, 100)
+  const percentage = Math.min(((signCount ?? 0) / goal) * 100, 100)
 
   return (
     <div>
       <div className="mb-6">
         <div className="flex justify-between items-end mb-2">
           <span className="text-sm text-stone-500">יעד: {goal.toLocaleString('he-IL')} חתימות</span>
-          <span className="text-2xl font-black text-stone-800">{signCount.toLocaleString('he-IL')}</span>
+          <span className="text-2xl font-black text-stone-800">
+            {signCount === null ? '...' : signCount.toLocaleString('he-IL')}
+          </span>
         </div>
         <div className="h-3 rounded-full bg-red-100 overflow-hidden">
           <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${percentage}%`, background: 'linear-gradient(90deg, #991b1b, #dc2626, #ef4444)' }} />
