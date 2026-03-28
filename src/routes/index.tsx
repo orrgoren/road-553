@@ -235,6 +235,7 @@ function PetitionForm() {
   const [phone, setPhone] = useState('')
   const [involvements, setInvolvements] = useState<Set<string>>(new Set())
   const [signed, setSigned] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
   const [signCount, setSignCount] = useState<number | null>(null)
 
   useEffect(() => {
@@ -253,11 +254,13 @@ function PetitionForm() {
   const handleSign = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!name || !city || !email) return
-    await fetch('/api/register', {
+    setSubmitError(false)
+    const res = await fetch('/api/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, city, email, phone, involvements: Array.from(involvements) }),
     })
+    if (!res.ok) { setSubmitError(true); return }
     setSigned(true)
     setSignCount(prev => (prev ?? 0) + 1)
   }
@@ -336,6 +339,9 @@ function PetitionForm() {
           >
             אני מצטרף למאבק
           </button>
+          {submitError && (
+            <p className="text-red-600 text-sm text-center">אירעה שגיאה, נסה שוב מאוחר יותר</p>
+          )}
         </form>
       )}
     </div>
