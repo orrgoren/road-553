@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-accent: #d97706;
+  --color-accent: #dc2626;
   --font-family-heebo: "Heebo", sans-serif;
   --font-family-rubik: "Rubik", sans-serif;
 }
@@ -162,10 +162,10 @@ input:focus, textarea:focus {
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Amber line divider */
+/* Red line divider */
 .red-line {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #fcd34d, #f59e0b, transparent);
-  opacity: 0.8;
+  background: linear-gradient(90deg, transparent, #fca5a5, #dc2626, transparent);
+  opacity: 0.5;
 }
 
