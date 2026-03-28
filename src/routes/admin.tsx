@@ -63,6 +63,16 @@ function AdminPage() {
     setPeople(prev => prev.map(p => p.id === id ? { ...p, dealt } : p))
   }
 
+  const deletePerson = async (id: number, name: string) => {
+    if (!confirm(`למחוק את ${name}?`)) return
+    const pw = sessionStorage.getItem(PW_KEY) ?? ''
+    await fetch(`/api/people/${id}`, {
+      method: 'DELETE',
+      headers: { 'x-admin-password': pw },
+    })
+    setPeople(prev => prev.filter(p => p.id !== id))
+  }
+
   if (!authed) {
     return (
       <div dir="rtl" style={{ fontFamily: 'Heebo, sans-serif' }} className="min-h-screen bg-stone-50 flex items-center justify-center">
@@ -135,7 +145,7 @@ function AdminPage() {
             <table className="w-full text-sm">
               <thead className="bg-stone-50 border-b border-stone-200">
                 <tr>
-                  {['שם', 'יישוב', 'אימייל', 'טלפון', 'מעורבות', 'תאריך', 'סטטוס'].map(h => (
+                  {['שם', 'יישוב', 'אימייל', 'טלפון', 'מעורבות', 'תאריך', 'סטטוס', ''].map(h => (
                     <th key={h} className="text-right px-4 py-3 font-semibold text-stone-500 text-xs uppercase tracking-wide">{h}</th>
                   ))}
                 </tr>
@@ -167,6 +177,14 @@ function AdminPage() {
                         }`}
                       >
                         {p.dealt ? 'בטל טיפול' : 'סמן כטופל'}
+                      </button>
+                    </td>
+                    <td className="px-4 py-3">
+                      <button
+                        onClick={() => deletePerson(p.id, p.name)}
+                        className="px-3 py-1 rounded-lg text-xs font-semibold bg-red-50 text-red-500 hover:bg-red-100 transition-colors cursor-pointer"
+                      >
+                        מחק
                       </button>
                     </td>
                   </tr>
