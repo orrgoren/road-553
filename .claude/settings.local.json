@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:app.base44.com)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "WebFetch(domain:overpass-api.de)",
+      "Bash(npx tsc:*)"
     ]
   }
 }
