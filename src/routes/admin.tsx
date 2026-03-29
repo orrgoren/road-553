@@ -108,15 +108,15 @@ function AdminPage() {
 
   return (
     <div dir="rtl" style={{ fontFamily: 'Heebo, sans-serif' }} className="min-h-screen bg-stone-50 text-stone-800">
-      <header className="bg-white border-b border-stone-200 px-6 py-4 flex items-center justify-between">
+      <header className="bg-white border-b border-stone-200 px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <h1 className="text-xl font-black">ניהול נרשמים — כביש 553</h1>
           <p className="text-sm text-stone-500 mt-0.5">
             סה"כ {total} נרשמים · {dealtCount} טופלו · {total - dealtCount} ממתינים
           </p>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="flex gap-2">
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex gap-2 flex-wrap">
             {(['all', 'pending', 'dealt'] as const).map(f => (
               <button
                 key={f}
@@ -142,7 +142,7 @@ function AdminPage() {
         {shown.length === 0 ? (
           <p className="text-center text-stone-400 py-20">אין נרשמים</p>
         ) : (
-          <div className="rounded-xl border border-stone-200 bg-white overflow-hidden">
+          <div className="rounded-xl border border-stone-200 bg-white overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="bg-stone-50 border-b border-stone-200">
                 <tr>

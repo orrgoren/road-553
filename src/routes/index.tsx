@@ -372,12 +372,12 @@ function StickyNav() {
         <div className="flex items-center gap-3">
           <a
             href="#join"
-            className="hidden sm:inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm no-underline transition-all hover:shadow-md hover:shadow-red-600/30"
+            className="inline-flex items-center gap-2 px-4 py-1.5 sm:px-5 sm:py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs sm:text-sm no-underline transition-all hover:shadow-md hover:shadow-red-600/30"
           >
-            הצטרפו למאבק
+            הצטרפו
           </a>
         </div>
-        <div className="flex items-center gap-1 sm:gap-3">
+        <div className="hidden sm:flex items-center gap-1 sm:gap-3">
           {links.map(link => (
             <a
               key={link.href}
@@ -480,7 +480,7 @@ function HomePage() {
             שיזרים עשרות אלפי רכבים ביום — דרך הבית שלנו.
           </p>
 
-          <p className="font-black text-white mx-auto mb-4 animate-fade-in-up whitespace-nowrap text-sm sm:text-base md:text-lg" style={{ animationDelay: '0.65s', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
+          <p className="font-black text-white mx-auto mb-4 animate-fade-in-up text-sm sm:text-base md:text-lg" style={{ animationDelay: '0.65s', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
             איום על הביטחון. זיהום אוויר. ניתוק בין יישובים. פגיעה במרחב הכפרי. רעש בלתי פוסק.
           </p>
 
@@ -580,7 +580,7 @@ function HomePage() {
               <p className="text-stone-400 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
                 <strong className="text-white">הפיכת</strong> כביש 553 ל&ldquo;צינור חיים&rdquo; יחיד ובלעדי{' '}
                 <span className="text-stone-300 font-semibold">(Single Point of Failure)</span>{' '}
-                עבור עשרות אלפי תושבים — <br /><strong class="text-white">היא מחדל ביטחוני חמור</strong>.
+                עבור עשרות אלפי תושבים — <br /><strong className="text-white">היא מחדל ביטחוני חמור</strong>.
               </p>
             </div>
           </RevealSection>
