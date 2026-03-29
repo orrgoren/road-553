@@ -11,13 +11,6 @@ function IconCheck() {
     </svg>
   )
 }
-function IconMail() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" />
-    </svg>
-  )
-}
 
 /* ─── Scroll reveal hook ─── */
 function useScrollReveal() {
@@ -99,7 +92,7 @@ function InteractiveMap() {
         iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
         shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
       })
-      const map = L.map(mapRef.current!, { center: [32.262, 34.910], zoom: 12, zoomControl: false, attributionControl: false })
+      const map = L.map(mapRef.current!, { center: [32.2630, 34.9504], zoom: 12, zoomControl: false, attributionControl: false })
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 16 }).addTo(map)
       L.control.zoom({ position: 'topleft' }).addTo(map)
       // Road 553 (כביש 553) - simplified clean waypoints based on OSM data
@@ -155,7 +148,6 @@ function InteractiveMap() {
       const markers = [
         { pos: [32.2609240, 34.9137626] as [number, number], label: 'לב השרון' },
         { pos: [32.2618234, 34.9484699] as [number, number], label: 'כביש 553' },
-        { pos: [32.2657673, 34.9647425] as [number, number], label: 'קצה כביש 553' },
       ]
       markers.forEach(m => {
         L.marker(m.pos, { icon: redIcon }).addTo(map)
@@ -177,45 +169,6 @@ function InteractiveMap() {
         מסלול כביש 553 המתוכנן
       </div>
     </div>
-  )
-}
-
-/* ─── Newsletter Form ─── */
-function NewsletterForm() {
-  const [email, setEmail] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (email) { setSubmitted(true); setEmail('') }
-  }
-
-  if (submitted) {
-    return (
-      <div className="flex items-center gap-3 p-4 rounded-xl bg-green-600/15 border border-green-500/30 text-green-600">
-        <IconCheck />
-        <span className="font-medium">תודה! נרשמת בהצלחה לעדכונים.</span>
-      </div>
-    )
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-      <div className="relative flex-1">
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 text-red-400">
-          <IconMail />
-        </div>
-        <input
-          type="email" required value={email} onChange={e => setEmail(e.target.value)}
-          placeholder="הכניסו את כתובת המייל שלכם"
-          className="w-full pr-12 pl-4 py-3.5 rounded-xl bg-red-50 border border-red-200 text-stone-800 placeholder-stone-400 text-base transition-all"
-          dir="rtl"
-        />
-      </div>
-      <button type="submit" className="px-8 py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-base transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-red-600/25 cursor-pointer whitespace-nowrap">
-        הצטרפו לרשימה
-      </button>
-    </form>
   )
 }
 
@@ -469,7 +422,7 @@ function HomePage() {
             className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight mb-8 animate-fade-in-up"
             style={{ fontFamily: 'Rubik, sans-serif', animationDelay: '0.5s', textShadow: '0 2px 16px rgba(0,0,0,0.6)', color: '#d74040' }}
           >
-            זה כביש ארצי שיחתוך את לב השרון וגוש תל-מונד לשניים.
+            זה כביש ארצי שיחתוך<br />את לב השרון וגוש תל-מונד לשניים.
           </h2>
 
           <p className="text-lg sm:text-xl text-white/85 max-w-3xl mx-auto mb-4 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.6s', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
@@ -693,7 +646,7 @@ function HomePage() {
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-5" style={{ fontFamily: 'Rubik, sans-serif' }}>
                 כביש מהיר =
-                <span className="text-red-500 mr-3">נתיב מילוט</span>
+                <span className="text-red-500 mr-2">נתיב מילוט</span>
               </h2>
               <p className="text-stone-400 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
                 מעבר לכל הפגיעה הסביבתית והקהילתית — יש כאן גם{' '}
