@@ -523,7 +523,7 @@ function HomePage() {
               <p className="text-stone-400 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
                 <strong className="text-white">הפיכת</strong> כביש 553 ל&ldquo;צינור חיים&rdquo; יחיד ובלעדי{' '}
                 <span className="text-stone-300 font-semibold"><br className="block md:hidden" />(Single Point of Failure)</span>{' '}
-                <br className="block md:hidden" />עבור עשרות אלפי תושבים<strong className="text-white">היא מחדל ביטחוני חמור</strong>.
+                <br className="block md:hidden" />עבור עשרות אלפי תושבים <strong className="text-white">היא מחדל ביטחוני חמור</strong>.
               </p>
             </div>
           </RevealSection>
