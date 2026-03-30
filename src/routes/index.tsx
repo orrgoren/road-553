@@ -485,25 +485,28 @@ function HomePage() {
 
       {/* ═══ WHAT IS HAPPENING ═══ */}
       <section id="what" className="py-20 sm:py-28">
-        <div className="max-w-4xl mx-auto px-4">
-          <WarnSection label="מה עומד לקרות" title="כביש במרחב כפרי הופך לאוטוסטרדה ארצית">
-            <p>
-              מתוכנן כאן <strong>ציר רוחב ארצי מפלצתי</strong> שיחבר בין כבישים 2, 4 ו־6 - במקום כביש שמשרת את תושבי האזור.
-            </p>
-            <BulletList items={[
-              '6 עד 8 נתיבים',
-              'עשרות אלפי רכבים ביום',
-              'תנועת משאיות כבדה',
-              'תנועה שאינה קשורה כלל לאזור',
-            ]} />
-            <p className="font-bold text-stone-800 mt-4">
-              זה כבר לא "הכביש שלנו", <br className="block md:hidden" /><span className="font-bold text-lg text-red-500">זה כביש שמשרת את כולם, על חשבוננו.</span>
-            </p>
-            <div className="mt-6 rounded-xl overflow-hidden w-full md:w-1/2">
-              <img src="/will_happen.jpeg" alt="כביש 553 עמוס תנועה" className="w-full object-cover object-bottom" />
-              <p className="text-xs text-stone-400 text-center py-2 px-4 italic bg-stone-100">תמונה זו נוצרה ע״י AI</p>
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div className="flex-1 min-w-0">
+              <WarnSection label="מה עומד לקרות" title="כביש במרחב כפרי הופך לאוטוסטרדה ארצית">
+                <p>
+                  מתוכנן כאן <strong>ציר רוחב ארצי מפלצתי</strong> שיחבר בין כבישים 2, 4 ו־6 - במקום כביש שמשרת את תושבי האזור.
+                </p>
+                <BulletList items={[
+                  '6 עד 8 נתיבים',
+                  'עשרות אלפי רכבים ביום',
+                  'תנועת משאיות כבדה',
+                  'תנועה שאינה קשורה כלל לאזור',
+                ]} />
+                <p className="font-bold text-stone-800 mt-4">
+                  זה כבר לא "הכביש שלנו", <br className="block md:hidden" /><span className="font-bold text-lg text-red-500">זה כביש שמשרת את כולם, על חשבוננו.</span>
+                </p>
+              </WarnSection>
             </div>
-          </WarnSection>
+            <div className="w-full md:w-80 lg:w-96 shrink-0">
+              <img src="/will_happen.jpeg" alt="כביש 553 עמוס תנועה" className="rounded-2xl object-cover object-bottom w-full aspect-4/3 shadow-lg" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -532,7 +535,7 @@ function HomePage() {
               <p className="text-stone-400 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
                 <strong className="text-white">הפיכת</strong> כביש 553 ל&ldquo;צינור חיים&rdquo; יחיד ובלעדי{' '}
                 <span className="text-stone-300 font-semibold"><br className="block md:hidden" />(Single Point of Failure)</span>{' '}
-                <br className="block md:hidden" />עבור עשרות אלפי תושבים <strong className="text-white">היא מחדל ביטחוני חמור</strong>.
+                <br className="block md:hidden" />עבור עשרות אלפי תושבים <br className="hidden sm:block" /><strong className="text-white">היא מחדל ביטחוני חמור</strong>.
               </p>
             </div>
           </RevealSection>
@@ -619,7 +622,7 @@ function HomePage() {
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
               <div className="flex-1 min-w-0">
                 <WarnSection label="הפגיעה במרחב הכפרי" title="הנוף הזה לא יחזור">
-                  <p>המרחב שבו אנחנו חיים לא נבנה ביום אחד<br className="block md:hidden" /><strong>והוא יכול להיהרס בהחלטה אחת.</strong></p>
+                  <p>המרחב שבו אנחנו חיים לא נבנה ביום אחד<br className="block md:hidden" /><strong>{' '}והוא יכול להיהרס בהחלטה אחת.</strong></p>
                   <BulletList items={[
                     'פגיעה בשטחים פתוחים',
                     'חיתוך רצפים אקולוגיים',
