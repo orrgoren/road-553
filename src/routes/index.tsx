@@ -395,8 +395,13 @@ function HomePage() {
 
       {/* ═══ HERO ═══ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'url(/hero.jpg)',
+        <div className="absolute inset-0 hidden md:block" style={{
+          backgroundImage: 'url(/desktop-hero.jpeg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }} />
+        <div className="absolute inset-0 block md:hidden" style={{
+          backgroundImage: 'url(/mobile-hero.jpeg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }} />
