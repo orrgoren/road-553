@@ -327,7 +327,7 @@ function StickyNav() {
             href="#join"
             className="inline-flex items-center gap-2 px-4 py-1.5 sm:px-5 sm:py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs sm:text-sm no-underline transition-all hover:shadow-md hover:shadow-red-600/30"
           >
-            הצטרפו
+            הצטרפו למאבק
           </a>
         </div>
         <div className="hidden sm:flex items-center gap-1 sm:gap-3">
@@ -436,7 +436,7 @@ function HomePage() {
             אם לא נעצור את זה עכשיו<br className="block md:hidden" />{' '}נתעורר למציאות חדשה.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+          <div className="hidden sm:flex flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             <a
               href="#join"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-lg no-underline transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-red-600/40"
