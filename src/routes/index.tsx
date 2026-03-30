@@ -320,7 +320,7 @@ function StickyNav() {
   ]
 
   return (
-    <nav className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${scrolled ? 'nav-scrolled py-3' : 'nav-light py-3'}`}>
+    <nav className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${scrolled ? 'nav-scrolled py-2' : 'nav-light py-2'}`}>
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <a
@@ -342,14 +342,7 @@ function StickyNav() {
           ))}
         </div>
         <div className="flex items-center gap-2">
-          <span className="font-black text-gray-800 text-base sm:text-lg hidden sm:block" style={{ fontFamily: 'Rubik, sans-serif' }}>
-            לב השרון · כביש 553
-          </span>
-          <div className="w-9 h-9 rounded-full bg-red-600 flex items-center justify-center flex-shrink-0">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-              <path d="M4 19L8 5" /><path d="M16 5L20 19" /><path d="M12 6V8" /><path d="M12 11V13" /><path d="M12 16V18" />
-            </svg>
-          </div>
+          <img src="/logo.png" alt="לוגו כביש 553" className="h-16 w-auto object-contain shrink-0" />
         </div>
       </div>
     </nav>
@@ -357,7 +350,7 @@ function StickyNav() {
 }
 
 /* ─── Warning Section Card ─── */
-function WarnSection({ id, label, title, children }: { id?: string; label: string; title: string; children: React.ReactNode }) {
+function WarnSection({ id, label, title, children }: { id?: string; label: string; title: React.ReactNode; children: React.ReactNode }) {
   const ref = useScrollReveal()
   return (
     <div id={id} ref={ref} className="reveal">
@@ -430,7 +423,7 @@ function HomePage() {
           </p>
 
           <p className="text-lg sm:text-xl text-white/85 max-w-3xl mx-auto mb-6 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.6s', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
-            שיזרים עשרות אלפי רכבים ביום — דרך הבית שלנו.
+            שיזרים עשרות אלפי רכבים ביום —<br className="block md:hidden" /> דרך הבית שלנו.
           </p>
 
           <p className="font-black text-white mx-auto mb-4 animate-fade-in-up text-sm sm:text-base md:text-lg" style={{ animationDelay: '0.65s', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
@@ -438,7 +431,7 @@ function HomePage() {
           </p>
 
           <p className="text-lg sm:text-xl font-black text-white max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: '0.7s', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
-            אם לא נעצור את זה עכשיו — נתעורר למציאות חדשה.
+            אם לא נעצור את זה עכשיו —<br className="block md:hidden" />נתעורר למציאות חדשה.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
@@ -502,7 +495,7 @@ function HomePage() {
               'תנועה שאינה קשורה כלל לאזור',
             ]} />
             <p className="font-bold text-stone-800 mt-4">
-              זה כבר לא "הכביש שלנו" — זה כביש שמשרת את כולם, על חשבוננו.
+              זה כבר לא "הכביש שלנו" —<br className="block md:hidden" />זה כביש שמשרת את כולם, על חשבוננו.
             </p>
           </WarnSection>
         </div>
@@ -526,14 +519,14 @@ function HomePage() {
                 מחדל ביטחוני
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-5" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                יצירת &ldquo;נקודת כשל אסטרטגית&rdquo;
+                יצירת <br className="block md:hidden" />&ldquo;נקודת כשל אסטרטגית&rdquo;
                 <br />
                 <span className="text-red-400">והפקרת החוסן היישובי</span>
               </h2>
               <p className="text-stone-400 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
                 <strong className="text-white">הפיכת</strong> כביש 553 ל&ldquo;צינור חיים&rdquo; יחיד ובלעדי{' '}
-                <span className="text-stone-300 font-semibold">(Single Point of Failure)</span>{' '}
-                עבור עשרות אלפי תושבים — <br /><strong className="text-white">היא מחדל ביטחוני חמור</strong>.
+                <span className="text-stone-300 font-semibold"><br className="block md:hidden" />(Single Point of Failure)</span>{' '}
+                <br className="block md:hidden" />עבור עשרות אלפי תושבים — <strong className="text-white">היא מחדל ביטחוני חמור</strong>.
               </p>
             </div>
           </RevealSection>
@@ -614,7 +607,7 @@ function HomePage() {
         <div className="max-w-4xl mx-auto px-4">
           <RevealSection>
             <WarnSection label="הפגיעה במרחב הכפרי" title="הנוף הזה לא יחזור">
-              <p>המרחב שבו אנחנו חיים לא נבנה ביום אחד — <strong>והוא יכול להיהרס בהחלטה אחת.</strong></p>
+              <p>המרחב שבו אנחנו חיים לא נבנה ביום אחד —<br className="block md:hidden" /><strong>והוא יכול להיהרס בהחלטה אחת.</strong></p>
               <BulletList items={[
                 'פגיעה בשטחים פתוחים',
                 'חיתוך רצפים אקולוגיים',
@@ -649,7 +642,7 @@ function HomePage() {
                 <span className="text-red-500 mr-2">נתיב מילוט</span>
               </h2>
               <p className="text-stone-400 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-                מעבר לכל הפגיעה הסביבתית והקהילתית — יש כאן גם{' '}
+                מעבר לכל הפגיעה הסביבתית והקהילתית —<br className="block md:hidden" />יש כאן גם{' '}
                 <span className="text-stone-300 font-semibold">השלכות ביטחוניות ברורות.</span>
               </p>
             </div>
@@ -760,7 +753,7 @@ function HomePage() {
       <section id="alternatives" className="py-20 sm:py-28 bg-stone-50">
         <div className="max-w-4xl mx-auto px-4 space-y-20">
           <RevealSection>
-            <WarnSection label="יש דרך אחרת" title="אנחנו לא נגד פיתוח — אנחנו בעד תכנון נכון">
+            <WarnSection label="יש דרך אחרת" title={<>אנחנו לא נגד פיתוח —<br className="block md:hidden" />אנחנו בעד תכנון נכון</>}>
               <p>ברור לכולם שצריך לשפר תשתיות — <strong>אבל לא בכל מחיר.</strong> יש פתרונות:</p>
               <BulletList items={[
                 'תשתיות תחבורה מותאמות לאזור',
@@ -795,7 +788,7 @@ function HomePage() {
                 הצטרפו למאבק
               </span>
               <h2 className="text-3xl sm:text-4xl font-black text-stone-800" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                זה הבית שלנו — <span className="text-red-600">ואנחנו לא מוותרים עליו</span>
+                זה הבית שלנו —<br className="block md:hidden" /> <span className="text-red-600">ואנחנו לא מוותרים עליו</span>
               </h2>
               <p className="text-stone-500 mt-4 leading-relaxed">
                 כדי לעצור את התוכנית — צריך כוח ציבורי. מה אפשר לעשות עכשיו:
