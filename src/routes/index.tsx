@@ -497,8 +497,12 @@ function HomePage() {
               'תנועה שאינה קשורה כלל לאזור',
             ]} />
             <p className="font-bold text-stone-800 mt-4">
-              זה כבר לא "הכביש שלנו"<br className="block md:hidden" />, <span className="font-bold text-lg text-red-500">זה כביש שמשרת את כולם, על חשבוננו.</span>
+              זה כבר לא "הכביש שלנו", <br className="block md:hidden" /><span className="font-bold text-lg text-red-500">זה כביש שמשרת את כולם, על חשבוננו.</span>
             </p>
+            <div className="mt-6 rounded-xl overflow-hidden w-full md:w-1/2">
+              <img src="/will_happen.jpeg" alt="כביש 553 עמוס תנועה" className="w-full object-cover object-bottom" />
+              <p className="text-xs text-stone-400 text-center py-2 px-4 italic bg-stone-100">תמונה זו נוצרה ע״י AI</p>
+            </div>
           </WarnSection>
         </div>
       </section>
