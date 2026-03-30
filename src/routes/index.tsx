@@ -409,7 +409,7 @@ function HomePage() {
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.75) 100%)'
         }} />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-32">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center sm:pt-32 pb-32">
           <h1
             className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-4 animate-fade-in-up text-white"
             style={{ fontFamily: 'Rubik, sans-serif', animationDelay: '0.4s', textShadow: '0 2px 24px rgba(0,0,0,0.6)' }}
@@ -432,7 +432,7 @@ function HomePage() {
             איום על הביטחון. זיהום אוויר. ניתוק בין יישובים.<br className="block md:hidden" />פגיעה במרחב הכפרי. רעש בלתי פוסק.
           </p>
 
-          <p className="text-lg sm:text-xl font-black text-white max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: '0.7s', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
+          <p className="text-lg sm:text-xl font-black text-white max-w-2xl mx-auto mt-16 sm:mt-0 mb-10 animate-fade-in-up" style={{ animationDelay: '0.7s', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
             אם לא נעצור את זה עכשיו<br className="block md:hidden" />{' '}נתעורר למציאות חדשה.
           </p>
 
