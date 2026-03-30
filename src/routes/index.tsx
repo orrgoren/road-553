@@ -569,19 +569,23 @@ function HomePage() {
             </RevealSection>
 
             <RevealSection delay="reveal-delay-3">
-              <div className="group rounded-2xl border border-stone-700/70 bg-stone-800/60 p-7 h-full flex flex-col transition-all duration-300 hover:border-orange-700/60 hover:bg-stone-800">
-                <div className="w-12 h-12 rounded-xl bg-orange-600/15 border border-orange-500/25 flex items-center justify-center mb-5 shrink-0 group-hover:bg-orange-600/25 transition-colors">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                  </svg>
+              <div className="group rounded-t-2xl border border-stone-700/70 bg-stone-800/60 h-full flex flex-col overflow-hidden transition-all duration-300 hover:border-orange-700/60 hover:bg-stone-800">
+                <div className="p-7 flex flex-col flex-1">
+                  <div className="w-12 h-12 rounded-xl bg-orange-600/15 border border-orange-500/25 flex items-center justify-center mb-5 shrink-0 group-hover:bg-orange-600/25 transition-colors">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                  </div>
+                  <div className="text-xs font-bold uppercase tracking-widest text-orange-500 mb-2">איום 03</div>
+                  <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: 'Rubik, sans-serif' }}>
+                    סיכון ביטחוני - קרבה לקו התפר
+                  </h3>
+                  <p className="text-stone-400 leading-relaxed text-sm flex-1">
+                    יצירת אוטוסטרדה חדירה המאפשרת הגעה מהירה ממוקדי חיכוך <strong className="text-stone-200 font-semibold">(יו״ש וקו התפר)</strong> אל עומק היישובים הכפריים תוך דקות ללא מעטפת הגנה ותוך פירוק החיץ החקלאי.
+                  </p>
                 </div>
-                <div className="text-xs font-bold uppercase tracking-widest text-orange-500 mb-2">איום 03</div>
-                <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                  סיכון ביטחוני - קרבה לקו התפר
-                </h3>
-                <p className="text-stone-400 leading-relaxed text-sm flex-1">
-                  יצירת אוטוסטרדה חדירה המאפשרת הגעה מהירה ממוקדי חיכוך <strong className="text-stone-200 font-semibold">(יו״ש וקו התפר)</strong> אל עומק היישובים הכפריים תוך דקות ללא מעטפת הגנה ותוך פירוק החיץ החקלאי.
-                </p>
+                <img src="/security-1.jpeg" alt="כוחות ביטחון בכביש" className="w-full h-44 object-cover object-bottom shrink-0" />
+                <p className="text-xs text-stone-500 text-center py-2 px-4 italic">תמונה זו נוצרה ע״י AI</p>
               </div>
             </RevealSection>
           </div>
@@ -659,23 +663,19 @@ function HomePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
             <RevealSection delay="reveal-delay-1">
-              <div className="group rounded-t-2xl border border-stone-700/70 bg-stone-800/60 h-full flex flex-col overflow-hidden transition-all duration-300 hover:border-red-900/80 hover:bg-stone-800">
-                <div className="p-7 flex flex-col flex-1">
-                  <div className="w-12 h-12 rounded-xl bg-red-900/30 border border-red-800/40 flex items-center justify-center mb-5 shrink-0 group-hover:bg-red-900/50 transition-colors">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#f87171" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-                      <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                    </svg>
-                  </div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-red-600 mb-2">סיכון 01</div>
-                  <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                    גישה נוחה ומהירה בין אזורים
-                  </h3>
-                  <p className="text-stone-400 leading-relaxed text-sm flex-1">
-                    ציר מהיר המחבר אזורים שונים <strong className="text-stone-200 font-semibold">מקצר זמני נסיעה דרמטית</strong> ומאפשר תנועה בלתי מבוקרת של גורמים שאינם בני האזור לעומק הישובים הכפריים.
-                  </p>
+              <div className="group rounded-2xl border border-stone-700/70 bg-stone-800/60 p-7 h-full flex flex-col transition-all duration-300 hover:border-red-900/80 hover:bg-stone-800">
+                <div className="w-12 h-12 rounded-xl bg-red-900/30 border border-red-800/40 flex items-center justify-center mb-5 shrink-0 group-hover:bg-red-900/50 transition-colors">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#f87171" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                    <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
                 </div>
-                <img src="/security-1.jpeg" alt="כוחות ביטחון בכביש" className="w-full h-44 object-cover object-center shrink-0" />
-                <p className="text-xs text-stone-500 text-center py-2 px-4 italic">תמונה זו נוצרה ע״י AI</p>
+                <div className="text-xs font-bold uppercase tracking-widest text-red-600 mb-2">סיכון 01</div>
+                <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: 'Rubik, sans-serif' }}>
+                  גישה נוחה ומהירה בין אזורים
+                </h3>
+                <p className="text-stone-400 leading-relaxed text-sm flex-1">
+                  ציר מהיר המחבר אזורים שונים <strong className="text-stone-200 font-semibold">מקצר זמני נסיעה דרמטית</strong> ומאפשר תנועה בלתי מבוקרת של גורמים שאינם בני האזור לעומק הישובים הכפריים.
+                </p>
               </div>
             </RevealSection>
 
@@ -695,7 +695,7 @@ function HomePage() {
                     כביש מהיר ונגיש <strong className="text-stone-200 font-semibold">מקל על פשיעה ועל יכולת מילוט</strong> בחזרה לאזורי מוצאתופעה מוכרת ומתועדת בכל מקום שבו נפרצה הפרדה בין אזורים.
                   </p>
                 </div>
-                <img src="/security-2.jpeg" alt="דיון ביטחוני בטלוויזיה" className="w-full h-44 object-cover object-center shrink-0" />
+                <img src="/security-2.jpeg" alt="דיון ביטחוני בטלוויזיה" className="w-full h-44 object-cover object-bottom shrink-0" />
                 <p className="text-xs text-stone-500 text-center py-2 px-4 italic">תמונה זו נוצרה ע״י AI</p>
               </div>
             </RevealSection>
