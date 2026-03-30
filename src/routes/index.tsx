@@ -492,7 +492,7 @@ function HomePage() {
               'תנועה שאינה קשורה כלל לאזור',
             ]} />
             <p className="font-bold text-stone-800 mt-4">
-              זה כבר לא "הכביש שלנו"<br className="block md:hidden" />זה כביש שמשרת את כולם, על חשבוננו.
+              זה כבר לא "הכביש שלנו"<br className="block md:hidden" /><span className="font-bold text-lg text-red-500">זה כביש שמשרת את כולם, על חשבוננו.</span>
             </p>
           </WarnSection>
         </div>
@@ -516,7 +516,7 @@ function HomePage() {
                 מחדל ביטחוני
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-5" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                יצירת <br className="block md:hidden" />&ldquo;נקודת כשל אסטרטגית&rdquo;
+                &ldquo;נקודת כשל אסטרטגית&rdquo;
                 <br />
                 <span className="text-red-400">והפקרת החוסן היישובי</span>
               </h2>
@@ -572,7 +572,7 @@ function HomePage() {
                 </div>
                 <div className="text-xs font-bold uppercase tracking-widest text-orange-500 mb-2">איום 03</div>
                 <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                  סיכון ביטחוניקרבה לקו התפר
+                  סיכון ביטחוני - קרבה לקו התפר
                 </h3>
                 <p className="text-stone-400 leading-relaxed text-sm flex-1">
                   יצירת אוטוסטרדה חדירה המאפשרת הגעה מהירה ממוקדי חיכוך <strong className="text-stone-200 font-semibold">(יו״ש וקו התפר)</strong> אל עומק היישובים הכפריים תוך דקותללא מעטפת הגנה ותוך פירוק החיץ החקלאי.
@@ -589,8 +589,8 @@ function HomePage() {
                 </svg>
               </div>
               <p className="text-stone-300 text-sm sm:text-base leading-relaxed">
-                <strong className="text-white">המסקנה:</strong> פגיעה אנושה בחוסן הקהילתיפירוק החיץ החקלאי ויצירת מסדרון חדיר הם
-                {' '}<strong className="text-red-400">מחדל ביטחוני שאי אפשר להשיב ממנו.</strong>
+                <strong className="text-white">המסקנה:</strong> פגיעה אנושה בחוסן הקהילתי פירוק החיץ החקלאי ויצירת מסדרון חדיר הם
+                {' '}<br className="block md:hidden" /><strong className="text-red-400">מחדל ביטחוני שאי אפשר להשיב ממנו.</strong>
               </p>
             </div>
           </RevealSection>
@@ -611,7 +611,7 @@ function HomePage() {
                 'שינוי בלתי הפיך של הסביבה',
                 'אובדן האופי הכפרי של האזור',
               ]} />
-              <p className="font-bold text-stone-800">זה לא רק כבישזה שינוי של זהות המקום.</p>
+              <p className="font-bold text-stone-800">זה לא רק כביש - זה שינוי של זהות המקום.</p>
             </WarnSection>
           </RevealSection>
         </div>
@@ -632,7 +632,7 @@ function HomePage() {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 shrink-0">
                   <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
                 </svg>
-                הביטחוןמה שלא מספרים לכם
+                הביטחון - מה שלא מספרים לכם
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-5" style={{ fontFamily: 'Rubik, sans-serif' }}>
                 כביש מהיר =
@@ -692,7 +692,7 @@ function HomePage() {
                   קושי בשליטה ובקרה
                 </h3>
                 <p className="text-stone-400 leading-relaxed text-sm flex-1">
-                  ריבוי תנועה אנונימי ובלתי מוכר <strong className="text-stone-200 font-semibold">מקשה על כוחות הביטחון לזהות חריגות</strong>. הקרבה לצירים רגישים הופכת את זה לנושא שאי אפשר להתעלם ממנוזה לא פחד, זו מציאות.
+                  ריבוי תנועה אנונימי ובלתי מוכר <strong className="text-stone-200 font-semibold">מקשה על כוחות הביטחון לזהות חריגות</strong>. הקרבה לצירים רגישים הופכת את זה לנושא שאי אפשר להתעלם ממנו<br className="block md:hidden" />זה לא פחד, זו מציאות.
                 </p>
               </div>
             </RevealSection>
@@ -707,14 +707,14 @@ function HomePage() {
         <div className="max-w-4xl mx-auto px-4">
           <RevealSection>
             <WarnSection label="איך זה פוגע בך אישית" title="זה לא רחוק. זה נוגע אליך.">
-              <p>הילדים שלנו גדלים במרחב פתוח ובטוח – הולכים לחברים, נוסעים בין יישובים, בלי לחשוב פעמיים. <strong>זו איכות חיים. הכביש הזה ישנה את זה מהיסוד.</strong></p>
+              <p>הילדים שלנו גדלים במרחב פתוח ובטוח – הולכים לחברים, נוסעים בין יישובים, בלי לחשוב פעמיים. <br className="block md:hidden" /><strong>זו איכות חיים. הכביש הזה ישנה את זה מהיסוד.</strong></p>
               <BulletList items={[
                 'הדרך לבית הספר תהפוך לחצייה של ציר מהיר ומסוכן',
                 'ילדים יהיו תלויים בהסעות ובתיאומים במקום בעצמאות',
-                'פעולות יומיומיות – קניות, רופא, חוג – ידרשו תכנון ועקיפות',
+                'פעולות יומיומיות – קניות, רפואה, חוג – ידרשו תכנון ועקיפות',
                 'מרחב פתוח ונגיש יהפוך למרחב מקוטע',
               ]} />
-              <p className="border-r-2 border-red-400 pr-4"><strong>זו פגיעה בעצמאות הילדים, בתחושת הביטחון שלהם, ובדרך החיים שרצינו להעביר להם.</strong></p>
+              <p className="border-r-2 border-red-400 pr-4"><strong>זו פגיעה בעצמאות, בתחושת הביטחון,<br className="block md:hidden" />ובדרך החיים שבחרנו לחיות.</strong></p>
             </WarnSection>
           </RevealSection>
         </div>
@@ -731,10 +731,10 @@ function HomePage() {
                 מפת האזור
               </span>
               <h2 className="text-3xl sm:text-4xl font-black text-stone-800" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                הקו האדוםבלב השרון
+                הקו האדום בלב השרון
               </h2>
               <p className="text-stone-500 mt-3 max-w-2xl mx-auto">
-                הקו האדום מציג את מסלול כביש 553 המתוכנן. האזור המסומן הוא תחום המועצה האזורית לב השרון.
+                הקו האדום המקווקו מציג את מסלול כביש 553 המתוכנן.
               </p>
             </div>
           </RevealSection>
@@ -751,14 +751,14 @@ function HomePage() {
         <div className="max-w-4xl mx-auto px-4 space-y-20">
           <RevealSection>
             <WarnSection label="יש דרך אחרת" title={<>אנחנו לא נגד פיתוח<br className="block md:hidden" />אנחנו בעד תכנון נכון</>}>
-              <p>ברור לכולם שצריך לשפר תשתיות<strong>אבל לא בכל מחיר.</strong> יש פתרונות:</p>
+              <p>ברור לכולם שצריך לשפר תשתיות<strong> אבל לא בכל מחיר.</strong> יש פתרונות:</p>
               <BulletList items={[
                 'תשתיות תחבורה מותאמות לאזור',
                 'פתרונות תת קרקעיים',
                 'תכנון שמשרת קודם כל את התושבים',
                 'שדרוג אמיתיבלי להפוך את האזור למסדרון ארצי',
               ]} />
-              <p className="font-bold text-stone-800">אפשר לקדםבלי להרוס.</p>
+              <p className="font-bold text-stone-800">אפשר לקדם, בלי להרוס.</p>
             </WarnSection>
           </RevealSection>
 
@@ -766,8 +766,8 @@ function HomePage() {
 
           <RevealSection>
             <WarnSection label="למה צריך לפעול עכשיו" title="חלון הזמן נסגר">
-              <p>התוכנית מתקדמתוהשלב הבא הוא <strong>שלב קריטי בתהליך האישור.</strong></p>
-              <p>אחרי שזה יקרה<strong>יהיה הרבה יותר קשה לעצור.</strong></p>
+              <p>התוכנית מתקדמת והשלב הבא הוא <strong>שלב קריטי בתהליך האישור.</strong></p>
+              <p>אחרי שזה יקרה - <strong>יהיה הרבה יותר קשה לעצור.</strong></p>
               <p className="font-bold text-red-700 text-xl">הזמן לפעול הוא עכשיו.</p>
             </WarnSection>
           </RevealSection>
@@ -785,10 +785,10 @@ function HomePage() {
                 הצטרפו למאבק
               </span>
               <h2 className="text-3xl sm:text-4xl font-black text-stone-800" style={{ fontFamily: 'Rubik, sans-serif' }}>
-                זה הבית שלנו<br className="block md:hidden" /> <span className="text-red-600">ואנחנו לא מוותרים עליו</span>
+                <span className="text-green-700">זה הבית שלנו</span><br className="block md:hidden" /> <span className="text-red-600">ואנחנו לא מוותרים עליו</span>
               </h2>
               <p className="text-stone-500 mt-4 leading-relaxed">
-                כדי לעצור את התוכניתצריך כוח ציבורי. מה אפשר לעשות עכשיו:
+                כדי לעצור את התוכנית צריך כוח ציבורי.<br className="block md:hidden" />מה אפשר לעשות עכשיו:
               </p>
               <div className="flex flex-wrap justify-center gap-3 mt-4 text-sm text-stone-600">
                 {['להצטרף לקבוצת עדכונים', 'לשתף את המידע', 'לקחת חלק בפעילות', 'להגיש התנגדות'].map((item, i) => (
@@ -818,12 +818,8 @@ function HomePage() {
             הכביש הזה חותך אותנו.
           </p>
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center">
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                <path d="M4 19L8 5" /><path d="M16 5L20 19" /><path d="M12 6V8" /><path d="M12 11V13" /><path d="M12 16V18" />
-              </svg>
-            </div>
-            <span className="font-bold text-stone-300" style={{ fontFamily: 'Rubik, sans-serif' }}>לב השרון · כביש 553</span>
+            <img src="/logo.png" alt="לוגו כביש 553" className="h-16 w-auto object-contain" />
+            <span className="font-bold text-stone-300" style={{ fontFamily: 'Rubik, sans-serif' }}>לב השרון · תל מונד · כביש 553</span>
           </div>
           <p className="text-stone-500 text-sm">
             תושבי לב השרון ותל מונד למען עתיד הקהילה
