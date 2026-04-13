@@ -320,7 +320,7 @@ function StickyNav() {
   ]
 
   return (
-    <nav className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${scrolled ? 'nav-scrolled py-2' : 'nav-light py-2'}`}>
+    <nav className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${scrolled ? 'nav-scrolled' : 'nav-light py-2'}`}>
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <a
