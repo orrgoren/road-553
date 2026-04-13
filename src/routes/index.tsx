@@ -401,7 +401,7 @@ function HomePage() {
           backgroundPosition: 'center',
         }} />
         <div className="absolute inset-0 block md:hidden" style={{
-          backgroundImage: 'url(/mobile-hero.jpeg)',
+          backgroundImage: 'url(/mobile-hero.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }} />
