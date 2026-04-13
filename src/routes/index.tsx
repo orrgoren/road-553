@@ -409,7 +409,7 @@ function HomePage() {
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.75) 100%)'
         }} />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-32 mt-8 pb-32" style={{ fontFamily: "Haim, sans-serif" }}>
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-32 mt-4 pb-32" style={{ fontFamily: "Haim, sans-serif" }}>
           <div className="relative inline-block w-full">
             <h1
               className="text-[80px] sm:text-8xl md:text-9xl font-black leading-none mb-0 text-red-600"
