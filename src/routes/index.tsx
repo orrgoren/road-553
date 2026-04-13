@@ -356,7 +356,7 @@ function WarnSection({ id, label, title, children }: { id?: string; label: strin
     <div id={id} ref={ref} className="reveal">
       <div className="border-r-4 border-red-600 pr-6 mb-4">
         <span className="text-lg font-bold uppercase tracking-widest text-red-500 mb-2 block">{label}</span>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-800 leading-tight" style={{ fontFamily: 'Rubik, sans-serif' }}>
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-800 leading-tight" style={{ fontFamily: "'Noto Sans Hebrew', sans-serif" }}>
           {title}
         </h2>
       </div>
@@ -409,16 +409,16 @@ function HomePage() {
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.75) 100%)'
         }} />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-32 sm:pt-32 pb-32">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-32 sm:pt-32 pb-32" style={{ fontFamily: "'Noto Sans Hebrew', sans-serif" }}>
           <h1
             className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-4 animate-fade-in-up text-white"
-            style={{ fontFamily: 'Rubik, sans-serif', animationDelay: '0.4s', textShadow: '0 2px 24px rgba(0,0,0,0.6)' }}
+            style={{ fontFamily: "'Noto Sans Hebrew', sans-serif", animationDelay: '0.4s', textShadow: '0 2px 24px rgba(0,0,0,0.6)' }}
           >
             זה לא שדרוג.
           </h1>
           <h2
             className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight mb-8 animate-fade-in-up"
-            style={{ fontFamily: 'Rubik, sans-serif', animationDelay: '0.5s', textShadow: '0 2px 16px rgba(0,0,0,0.6)', color: '#d74040' }}
+            style={{ fontFamily: "'Noto Sans Hebrew', sans-serif", animationDelay: '0.5s', textShadow: '0 2px 16px rgba(0,0,0,0.6)', color: '#d74040' }}
           >
             זה כביש ארצי שיחתוך<br />את לב השרון וגוש תל-מונד לשניים.
           </h2>
@@ -527,7 +527,7 @@ function HomePage() {
                 </svg>
                 מחדל ביטחוני
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-5" style={{ fontFamily: 'Rubik, sans-serif' }}>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-5" style={{ fontFamily: "'Noto Sans Hebrew', sans-serif" }}>
                 &ldquo;נקודת כשל אסטרטגית&rdquo;
                 <br />
                 <span className="text-red-400">והפקרת החוסן היישובי</span>
@@ -549,7 +549,7 @@ function HomePage() {
                   </svg>
                 </div>
                 <div className="text-xs font-bold uppercase tracking-widest text-red-500 mb-2">איום 01</div>
-                <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: 'Rubik, sans-serif' }}>
+                <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: "'Noto Sans Hebrew', sans-serif" }}>
                   העדר חלופה בחירום
                 </h3>
                 <p className="text-stone-400 leading-relaxed text-sm flex-1">
@@ -566,7 +566,7 @@ function HomePage() {
                   </svg>
                 </div>
                 <div className="text-xs font-bold uppercase tracking-widest text-amber-500 mb-2">איום 02</div>
-                <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: 'Rubik, sans-serif' }}>
+                <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: "'Noto Sans Hebrew', sans-serif" }}>
                   זליגת תנועה מסוכנת
                 </h3>
                 <p className="text-stone-400 leading-relaxed text-sm flex-1">
@@ -584,7 +584,7 @@ function HomePage() {
                     </svg>
                   </div>
                   <div className="text-xs font-bold uppercase tracking-widest text-orange-500 mb-2">איום 03</div>
-                  <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: 'Rubik, sans-serif' }}>
+                  <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: "'Noto Sans Hebrew', sans-serif" }}>
                     סיכון ביטחוני - קרבה לקו התפר
                   </h3>
                   <p className="text-stone-400 leading-relaxed text-sm flex-1">
@@ -657,7 +657,7 @@ function HomePage() {
                 </svg>
                 הביטחון - מה שלא מספרים לכם
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-5" style={{ fontFamily: 'Rubik, sans-serif' }}>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-5" style={{ fontFamily: "'Noto Sans Hebrew', sans-serif" }}>
                 כביש מהיר =
                 <span className="text-red-500 mr-2">נתיב מילוט</span>
               </h2>
@@ -677,7 +677,7 @@ function HomePage() {
                   </svg>
                 </div>
                 <div className="text-xs font-bold uppercase tracking-widest text-red-600 mb-2">סיכון 01</div>
-                <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: 'Rubik, sans-serif' }}>
+                <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: "'Noto Sans Hebrew', sans-serif" }}>
                   גישה נוחה ומהירה בין אזורים
                 </h3>
                 <p className="text-stone-400 leading-relaxed text-sm flex-1">
@@ -695,7 +695,7 @@ function HomePage() {
                     </svg>
                   </div>
                   <div className="text-xs font-bold uppercase tracking-widest text-red-600 mb-2">סיכון 02</div>
-                  <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: 'Rubik, sans-serif' }}>
+                  <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: "'Noto Sans Hebrew', sans-serif" }}>
                     הקלה על תנועת גורמים עברייניים
                   </h3>
                   <p className="text-stone-400 leading-relaxed text-sm flex-1">
@@ -715,7 +715,7 @@ function HomePage() {
                   </svg>
                 </div>
                 <div className="text-xs font-bold uppercase tracking-widest text-red-600 mb-2">סיכון 03</div>
-                <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: 'Rubik, sans-serif' }}>
+                <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: "'Noto Sans Hebrew', sans-serif" }}>
                   קושי בשליטה ובקרה
                 </h3>
                 <p className="text-stone-400 leading-relaxed text-sm flex-1">
@@ -757,7 +757,7 @@ function HomePage() {
               <span className="inline-block px-4 py-1.5 rounded-full bg-red-100 border border-red-300 text-red-700 text-sm font-medium mb-4">
                 מפת האזור
               </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-stone-800" style={{ fontFamily: 'Rubik, sans-serif' }}>
+              <h2 className="text-3xl sm:text-4xl font-black text-stone-800" style={{ fontFamily: "'Noto Sans Hebrew', sans-serif" }}>
                 הקו האדום בלב השרון
               </h2>
               <p className="text-stone-500 mt-3 max-w-2xl mx-auto">
@@ -811,7 +811,7 @@ function HomePage() {
               <span className="inline-block px-4 py-1.5 rounded-full bg-red-100 border border-red-300 text-red-700 text-sm font-medium mb-4">
                 הצטרפו למאבק
               </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-stone-800" style={{ fontFamily: 'Rubik, sans-serif' }}>
+              <h2 className="text-3xl sm:text-4xl font-black text-stone-800" style={{ fontFamily: "'Noto Sans Hebrew', sans-serif" }}>
                 <span className="text-green-700">זה הבית שלנו</span><br className="block md:hidden" /> <span className="text-red-600">ואנחנו לא מוותרים עליו</span>
               </h2>
               <p className="text-stone-500 mt-4 leading-relaxed">
@@ -838,7 +838,7 @@ function HomePage() {
       {/* ═══ FOOTER ═══ */}
       <footer className="border-t border-red-200 bg-stone-900 py-14">
         <div className="max-w-5xl mx-auto px-4 text-center">
-          <p className="text-2xl sm:text-3xl font-black text-white mb-2" style={{ fontFamily: 'Rubik, sans-serif' }}>
+          <p className="text-2xl sm:text-3xl font-black text-white mb-2" style={{ fontFamily: "'Noto Sans Hebrew', sans-serif" }}>
             לא בתוואי הזה.
           </p>
           <p className="text-red-400 text-xl font-bold mb-8">
@@ -846,7 +846,7 @@ function HomePage() {
           </p>
           <div className="flex items-center justify-center gap-2 mb-4">
             <img src="/logo.png" alt="לוגו כביש 553" className="h-16 w-auto object-contain" />
-            <span className="font-bold text-stone-300" style={{ fontFamily: 'Rubik, sans-serif' }}>לב השרון · תל מונד · כביש 553</span>
+            <span className="font-bold text-stone-300" style={{ fontFamily: "'Noto Sans Hebrew', sans-serif" }}>לב השרון · תל מונד · כביש 553</span>
           </div>
           <p className="text-stone-500 text-sm">
             תושבי לב השרון ותל מונד למען עתיד הקהילה
