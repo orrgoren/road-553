@@ -401,7 +401,7 @@ function HomePage() {
           backgroundPosition: 'center',
         }} />
         <div className="absolute inset-0 block md:hidden" style={{
-          backgroundImage: 'url(/mobile.png)',
+          backgroundImage: 'url(/mobile-hero.jpeg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }} />
@@ -409,25 +409,25 @@ function HomePage() {
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.75) 100%)'
         }} />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-32 sm:pt-32 pb-32 hidden md:block" style={{ fontFamily: "Haim, sans-serif" }}>
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-32 sm:pt-32 pb-32" style={{ fontFamily: "Haim, sans-serif" }}>
           <h1
-            className="text-7xl sm:text-8xl md:text-9xl font-black leading-none mb-0 animate-fade-in-up text-white"
-            style={{ fontFamily: "Haim, sans-serif", animationDelay: '0.4s', filter: 'drop-shadow(0 4px 16px rgba(0,0,0,0.7))' }}
+            className="text-8xl sm:text-9xl md:text-10xl font-black leading-none mb-0 text-red-600"
+            style={{ fontFamily: "Haim, sans-serif", filter: 'drop-shadow(6px 6px #000000)' }}
           >
             דורסים
           </h1>
           <h2
-            className="text-5xl sm:text-6xl md:text-7xl font-black leading-none mb-8 animate-fade-in-up"
-            style={{ fontFamily: "Haim, sans-serif", animationDelay: '0.5s', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.7))', color: '#d74040', marginTop: '-0.2em' }}
+            className="text-[54px] sm:text-7xl md:text-5xl font-black leading-none mb-8 text-white"
+            style={{ fontFamily: "Haim, sans-serif", filter: 'drop-shadow(8px 8px #000000)', marginTop: '-0.2em' }}
           >
             לנו את הבית
           </h2>
 
-          <p className="text-base sm:text-xl max-w-3xl mx-auto mb-10 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.6s' }}>
-            <span className="bg-white text-black px-2 py-0.5 leading-loose box-decoration-clone">בין בתים ופרדסים בשרון מתכננים להעביר מפלצת של אספלט ובטון, כביש 553 החדש קורע את הקהילה שלנו, מזהם את אויר הילדים שלנו</span>
+          <p className="text-sm font-light max-w-3xl mx-auto mb-64" >
+            <span className="bg-white text-black px-2 py-0.5">בין בתים ופרדסים בשרון מתכננים להעביר מפלצת של אספלט ובטון, כביש 553 החדש קורע את הקהילה שלנו, מזהם את אויר הילדים שלנו</span>
           </p>
 
-          <div className="flex flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
+          <div className="flex-row gap-4 justify-center animate-fade-in-up hidden md:flex" style={{ animationDelay: '0.7s' }}>
             <a
               href="#join"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-lg no-underline transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-red-600/40"
@@ -442,12 +442,13 @@ function HomePage() {
             </a>
           </div>
 
-          <p className="text-white/40 text-xl max-w-2xl mx-auto mt-12 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.8s' }}>
+          <p className="text-white/80 text-2xl max-w-2xl mx-auto mt-12 font-family-rubik font-bold">
             עין ורד. עין שריד. תל מונד. פורת. יעף. יעבץ. עזריאל. בני דרור.<br />כפר הס. חרות. משמרת. קדימה.
           </p>
 
-          <div className="text-2xl mt-4 animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
-            <span className="bg-white text-black px-1">חייבים לעצור את זה</span>{' '}<span className="font-bold text-red-500">עכשיו</span>
+          <div className="mt-8 w-fit mx-auto flex items-center gap-1">
+            <div className="bg-white text-black px-2 text-[20px] h-7">חייבים לעצור את זה</div>
+            <div className="font-bold text-red-500 text-[40px] leading-none h-8">עכשיו</div>
           </div>
 
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
