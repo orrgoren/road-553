@@ -594,23 +594,6 @@ function HomePage() {
             </RevealSection>
 
             <RevealSection delay="reveal-delay-2">
-              <div className="group rounded-2xl border border-stone-700/70 bg-stone-800/60 p-7 h-full flex flex-col transition-all duration-300 hover:border-amber-700/60 hover:bg-stone-800">
-                <div className="w-12 h-12 rounded-xl bg-amber-600/15 border border-amber-500/25 flex items-center justify-center mb-5 shrink-0 group-hover:bg-amber-600/25 transition-colors">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-                    <polygon points="3 11 22 2 13 21 11 13 3 11"/>
-                  </svg>
-                </div>
-                <div className="text-xs font-bold uppercase tracking-widest text-amber-500 mb-2">איום 02</div>
-                <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: "Haim, sans-serif" }}>
-                  זליגת תנועה מסוכנת
-                </h3>
-                <p className="text-stone-400 leading-relaxed text-sm flex-1">
-                  במצבי העומס הצפויים, אלפי רכבים ינותבו דרך אפליקציות ניווט לתוך <strong className="text-stone-200 font-semibold">הרחובות הצרים בתוך היישובים</strong>. &ldquo;זליגה&rdquo; זו תחסום את נתיבי המילוט ותיצור סכנה ממשית לילדים והולכי רגל.
-                </p>
-              </div>
-            </RevealSection>
-
-            <RevealSection delay="reveal-delay-3">
               <div className="group rounded-t-2xl border border-stone-700/70 bg-stone-800/60 h-full flex flex-col overflow-hidden transition-all duration-300 hover:border-orange-700/60 hover:bg-stone-800">
                 <div className="p-7 flex flex-col flex-1">
                   <div className="w-12 h-12 rounded-xl bg-orange-600/15 border border-orange-500/25 flex items-center justify-center mb-5 shrink-0 group-hover:bg-orange-600/25 transition-colors">
@@ -618,7 +601,7 @@ function HomePage() {
                       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     </svg>
                   </div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-orange-500 mb-2">איום 03</div>
+                  <div className="text-xs font-bold uppercase tracking-widest text-orange-500 mb-2">איום 02</div>
                   <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: "Haim, sans-serif" }}>
                     סיכון ביטחוני - קרבה לקו התפר
                   </h3>
@@ -628,6 +611,23 @@ function HomePage() {
                 </div>
                 <img src="/security-1.jpeg" alt="כוחות ביטחון בכביש" className="w-full h-44 object-cover object-bottom shrink-0" />
                 <p className="text-xs text-stone-500 text-center py-2 px-4 italic">תמונה זו נוצרה ע״י AI</p>
+              </div>
+            </RevealSection>
+
+            <RevealSection delay="reveal-delay-3">
+              <div className="group rounded-2xl border border-stone-700/70 bg-stone-800/60 p-7 h-full flex flex-col transition-all duration-300 hover:border-amber-700/60 hover:bg-stone-800">
+                <div className="w-12 h-12 rounded-xl bg-amber-600/15 border border-amber-500/25 flex items-center justify-center mb-5 shrink-0 group-hover:bg-amber-600/25 transition-colors">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                    <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                  </svg>
+                </div>
+                <div className="text-xs font-bold uppercase tracking-widest text-amber-500 mb-2">איום 03</div>
+                <h3 className="font-black text-white text-lg sm:text-xl mb-3 leading-snug" style={{ fontFamily: "Haim, sans-serif" }}>
+                  זליגת תנועה מסוכנת
+                </h3>
+                <p className="text-stone-400 leading-relaxed text-sm flex-1">
+                  במצבי העומס הצפויים, אלפי רכבים ינותבו דרך אפליקציות ניווט לתוך <strong className="text-stone-200 font-semibold">הרחובות הצרים בתוך היישובים</strong>. &ldquo;זליגה&rdquo; זו תחסום את נתיבי המילוט ותיצור סכנה ממשית לילדים והולכי רגל.
+                </p>
               </div>
             </RevealSection>
           </div>
