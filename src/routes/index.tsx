@@ -409,21 +409,21 @@ function HomePage() {
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.75) 100%)'
         }} />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-32 sm:pt-32 pb-32" style={{ fontFamily: "Haim, sans-serif" }}>
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-32 mt-16 pb-32" style={{ fontFamily: "Haim, sans-serif" }}>
           <h1
-            className="text-8xl sm:text-9xl md:text-10xl font-black leading-none mb-0 text-red-600"
+            className="text-[80px] sm:text-8xl md:text-9xl font-black leading-none mb-0 text-red-600"
             style={{ fontFamily: "Haim, sans-serif", filter: 'drop-shadow(6px 6px #000000)' }}
           >
             דורסים
           </h1>
           <h2
-            className="text-[54px] sm:text-7xl md:text-5xl font-black leading-none mb-8 text-white"
-            style={{ fontFamily: "Haim, sans-serif", filter: 'drop-shadow(8px 8px #000000)', marginTop: '-0.2em' }}
+            className="text-[44px] sm:text-7xl md:text-5xl font-black leading-none mb-8 text-white"
+            style={{ fontFamily: "Haim, sans-serif", filter: 'drop-shadow(4px 6px #000000)', marginTop: '-0.2em' }}
           >
             לנו את הבית
           </h2>
 
-          <p className="text-sm max-w-3xl mx-auto mb-64" >
+          <p className="text-sm max-w-3xl mx-auto mb-48" >
             <span className="bg-white text-black px-2 py-0.5">בין בתים ופרדסים בשרון מתכננים להעביר מפלצת של אספלט ובטון, כביש 553 החדש קורע את הקהילה שלנו, מזהם את אויר הילדים שלנו</span>
           </p>
 
@@ -442,13 +442,13 @@ function HomePage() {
             </a>
           </div>
 
-          <p className="text-white/80 text-2xl max-w-2xl mx-auto mt-12 font-family-rubik font-bold">
+          <p className="text-white/80 text-2xl max-w-2xl mx-auto mt-6 font-family-rubik font-bold">
             עין ורד. עין שריד. תל מונד. פורת. יעף. יעבץ. עזריאל. בני דרור.<br />כפר הס. חרות. משמרת. קדימה.
           </p>
 
           <div className="mt-8 w-fit mx-auto flex items-center gap-1">
             <div className="bg-white text-black px-2 text-[20px] h-7">חייבים לעצור את זה</div>
-            <div className="font-bold text-red-500 text-[35px] leading-none h-8">עכשיו</div>
+            <div className="font-bold text-red-600 text-[35px] leading-none h-8">עכשיו</div>
           </div>
 
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
