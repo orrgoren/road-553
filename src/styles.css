@@ -1,10 +1,16 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Haim";
+  src: url("/haim.ttf") format("truetype");
+  font-display: swap;
+}
+
 @theme {
   --color-accent: #dc2626;
   --font-family-heebo: "Heebo", sans-serif;
   --font-family-rubik: "Rubik", sans-serif;
-  --font-family-noto-sans-hebrew: "Noto Sans Hebrew", sans-serif;
+  --font-family-haim: "Haim", sans-serif;
 }
 
 html {
