@@ -411,6 +411,7 @@ function HomePage() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-32 mt-4 pb-32" style={{ fontFamily: "Haim, sans-serif" }}>
           <div className="relative inline-block w-full">
+            {/* Base text */}
             <h1
               className="text-[80px] sm:text-8xl md:text-9xl font-black leading-none mb-0 text-red-600"
               style={{ fontFamily: "Haim, sans-serif", filter: 'drop-shadow(6px 6px #000000)' }}
@@ -418,36 +419,48 @@ function HomePage() {
               דורסים
             </h1>
             <h2
-              className="text-[44px] sm:text-7xl md:text-5xl font-black leading-none mb-8 text-white"
+              className="text-[44px] sm:text-7xl md:text-7xl font-black leading-none mb-8 text-white"
               style={{ fontFamily: "Haim, sans-serif", filter: 'drop-shadow(4px 6px #000000)', marginTop: '-0.2em' }}
             >
               לנו את הבית
             </h2>
-            <img
-              src="/tires.png"
-              alt=""
-              className="absolute inset-0 w-full pointer-events-none object-contain opacity-60"
-            />
+            {/* Tire texture clipped to text shapes only */}
+            <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+              <h1
+                className="text-[80px] sm:text-8xl md:text-9xl font-black leading-none mb-0 opacity-75"
+                style={{
+                  fontFamily: "Haim, sans-serif",
+                  backgroundImage: 'url(/tires.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent',
+                }}
+              >
+                דורסים
+              </h1>
+              <h2
+                className="text-[44px] sm:text-7xl md:text-5xl font-black leading-none mb-8 opacity-75"
+                style={{
+                  fontFamily: "Haim, sans-serif",
+                  backgroundImage: 'url(/tires.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent',
+                  marginTop: '-0.2em',
+                }}
+              >
+                לנו את הבית
+              </h2>
+            </div>
           </div>
 
-          <p className="text-sm max-w-3xl mx-auto mb-32" >
+          <p className="text-sm max-w-3xl mx-auto mb-32 md:mb-16 md:text-xl" >
             <span className="bg-white text-black px-2 py-0.5">בין בתים ופרדסים בשרון מתכננים להעביר מפלצת של אספלט ובטון, כביש 553 החדש קורע את הקהילה שלנו, מזהם את אויר הילדים שלנו</span>
           </p>
-
-          <div className="flex-row gap-4 justify-center animate-fade-in-up hidden md:flex" style={{ animationDelay: '0.7s' }}>
-            <a
-              href="#join"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-lg no-underline transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-red-600/40"
-            >
-              הצטרפו למאבק עכשיו
-            </a>
-            <a
-              href="#what"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/40 hover:border-white/70 text-white font-bold text-lg no-underline transition-all hover:-translate-y-1 hover:bg-white/10 backdrop-blur-sm"
-            >
-              איך זה משפיע עליי?
-            </a>
-          </div>
 
           <p className="text-white/80 text-2xl max-w-2xl mx-auto font-family-rubik font-bold">
             עין ורד. עין שריד. תל מונד. פורת. יעף. יעבץ. עזריאל. בני דרור.<br />כפר הס. חרות. משמרת. קדימה.
@@ -456,6 +469,21 @@ function HomePage() {
           <div className="mt-8 w-fit mx-auto flex items-center gap-1">
             <div className="bg-white text-black px-2 text-[20px] h-7">חייבים לעצור את זה</div>
             <div className="font-bold text-red-600 text-[35px] leading-none h-8">עכשיו</div>
+          </div>
+
+          <div className="flex-row gap-4 justify-center animate-fade-in-up hidden md:flex md:mt-8" style={{ animationDelay: '0.7s' }}>
+            <a
+                href="#join"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-lg no-underline transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-red-600/40"
+            >
+              הצטרפו למאבק עכשיו
+            </a>
+            <a
+                href="#what"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/40 hover:border-white/70 text-white font-bold text-lg no-underline transition-all hover:-translate-y-1 hover:bg-white/10 backdrop-blur-sm"
+            >
+              איך זה משפיע עליי?
+            </a>
           </div>
 
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
