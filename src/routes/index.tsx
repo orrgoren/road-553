@@ -430,7 +430,7 @@ function HomePage() {
             />
           </div>
 
-          <p className="text-sm max-w-3xl mx-auto mb-48" >
+          <p className="text-sm max-w-3xl mx-auto mb-32" >
             <span className="bg-white text-black px-2 py-0.5">בין בתים ופרדסים בשרון מתכננים להעביר מפלצת של אספלט ובטון, כביש 553 החדש קורע את הקהילה שלנו, מזהם את אויר הילדים שלנו</span>
           </p>
 
@@ -449,7 +449,7 @@ function HomePage() {
             </a>
           </div>
 
-          <p className="text-white/80 text-2xl max-w-2xl mx-auto mt-6 font-family-rubik font-bold">
+          <p className="text-white/80 text-2xl max-w-2xl mx-auto font-family-rubik font-bold">
             עין ורד. עין שריד. תל מונד. פורת. יעף. יעבץ. עזריאל. בני דרור.<br />כפר הס. חרות. משמרת. קדימה.
           </p>
 
