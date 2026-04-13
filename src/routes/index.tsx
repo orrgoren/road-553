@@ -414,29 +414,22 @@ function HomePage() {
             className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-4 animate-fade-in-up text-white"
             style={{ fontFamily: "Haim, sans-serif", animationDelay: '0.4s', textShadow: '0 2px 24px rgba(0,0,0,0.6)' }}
           >
-            זה לא שדרוג.
+            דורסים
           </h1>
           <h2
             className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight mb-8 animate-fade-in-up"
             style={{ fontFamily: "Haim, sans-serif", animationDelay: '0.5s', textShadow: '0 2px 16px rgba(0,0,0,0.6)', color: '#d74040' }}
           >
-            זה כביש ארצי שיחתוך<br />את לב השרון וגוש תל-מונד לשניים.
+            לנו את הבית
           </h2>
 
-          <p className="text-lg sm:text-xl text-white/85 max-w-3xl mx-auto mb-4 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.6s', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
-            כביש 553 מתוכנן להפוך מציר אזורי לכביש רוחב ארצי של 6–8 נתיבים
-            שיזרים עשרות אלפי רכבים ביום דרך הבית שלנו.
+          <br /><br />
+
+          <p className="text-lg sm:text-xl text-white/85 max-w-3xl mx-auto mb-10 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.6s', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
+            בין בתים ופרדסים בשרון מתכננים להעביר מפלצת של אספלט ובטון, כביש 553 החדש קורע את הקהילה שלנו, מזהם את אויר הילדים שלנו
           </p>
 
-          <p className="font-black text-white mx-auto mb-4 animate-fade-in-up text-sm sm:text-base md:text-lg" style={{ animationDelay: '0.65s', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
-            איום על הביטחון. זיהום אוויר. ניתוק בין יישובים.<br className="block md:hidden" />פגיעה במרחב הכפרי. רעש בלתי פוסק.
-          </p>
-
-          <p className="text-lg sm:text-xl font-black text-white max-w-2xl mx-auto mt-24 sm:mt-0 mb-10 animate-fade-in-up" style={{ animationDelay: '0.7s', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
-            אם לא נעצור את זה עכשיו<br className="block md:hidden" />{' '}נתעורר למציאות חדשה.
-          </p>
-
-          <div className="hidden sm:flex flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+          <div className="hidden sm:flex flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
             <a
               href="#join"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-lg no-underline transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-red-600/40"
@@ -450,6 +443,12 @@ function HomePage() {
               איך זה משפיע עליי?
             </a>
           </div>
+
+          <p className="text-white/40 text-sm max-w-2xl mx-auto mt-16 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.8s' }}>
+            ״עין ורד. עין שריד. תל מונד. פורת. יעף. יעבץ. עזריאל. בני דרור. כפר הס. חרות. משמרת. קדימה.
+            <br /><br />
+            חייבים לעצור את זה עכשיו
+          </p>
 
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
             <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
