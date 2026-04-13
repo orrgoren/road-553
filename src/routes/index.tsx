@@ -423,7 +423,7 @@ function HomePage() {
             לנו את הבית
           </h2>
 
-          <p className="text-sm font-light max-w-3xl mx-auto mb-64" >
+          <p className="text-sm max-w-3xl mx-auto mb-64" >
             <span className="bg-white text-black px-2 py-0.5">בין בתים ופרדסים בשרון מתכננים להעביר מפלצת של אספלט ובטון, כביש 553 החדש קורע את הקהילה שלנו, מזהם את אויר הילדים שלנו</span>
           </p>
 
@@ -448,7 +448,7 @@ function HomePage() {
 
           <div className="mt-8 w-fit mx-auto flex items-center gap-1">
             <div className="bg-white text-black px-2 text-[20px] h-7">חייבים לעצור את זה</div>
-            <div className="font-bold text-red-500 text-[40px] leading-none h-8">עכשיו</div>
+            <div className="font-bold text-red-500 text-[35px] leading-none h-8">עכשיו</div>
           </div>
 
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">

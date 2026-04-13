@@ -2,7 +2,23 @@
 
 @font-face {
   font-family: "Haim";
-  src: url("/haim.ttf") format("truetype");
+  src: url("/haim-classic-black-fm.woff2") format("woff2"),
+       url("/haim.ttf") format("truetype");
+  font-weight: 700 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Haim";
+  src: url("/haim-classic-regular-fm.woff2") format("woff2");
+  font-weight: 400 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Haim";
+  src: url("/haim-classic-light-fm.woff2") format("woff2");
+  font-weight: 100 300;
   font-display: swap;
 }
 
