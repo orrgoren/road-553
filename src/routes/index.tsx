@@ -411,7 +411,7 @@ function HomePage() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-32 sm:pt-32 pb-32" style={{ fontFamily: "Haim, sans-serif" }}>
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-4 animate-fade-in-up text-white"
+            className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-1 animate-fade-in-up text-white"
             style={{ fontFamily: "Haim, sans-serif", animationDelay: '0.4s', textShadow: '0 2px 24px rgba(0,0,0,0.6)' }}
           >
             דורסים
@@ -447,7 +447,7 @@ function HomePage() {
           <p className="text-white/40 text-sm max-w-2xl mx-auto mt-16 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.8s' }}>
             ״עין ורד. עין שריד. תל מונד. פורת. יעף. יעבץ. עזריאל. בני דרור. כפר הס. חרות. משמרת. קדימה.
             <br /><br />
-            חייבים לעצור את זה עכשיו
+            <span className="bg-white text-black px-1">חייבים לעצור את זה</span>{' '}<span className="font-bold text-red-500">עכשיו</span>
           </p>
 
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
