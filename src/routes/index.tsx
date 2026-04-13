@@ -409,19 +409,26 @@ function HomePage() {
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.75) 100%)'
         }} />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-32 mt-16 pb-32" style={{ fontFamily: "Haim, sans-serif" }}>
-          <h1
-            className="text-[80px] sm:text-8xl md:text-9xl font-black leading-none mb-0 text-red-600"
-            style={{ fontFamily: "Haim, sans-serif", filter: 'drop-shadow(6px 6px #000000)' }}
-          >
-            דורסים
-          </h1>
-          <h2
-            className="text-[44px] sm:text-7xl md:text-5xl font-black leading-none mb-8 text-white"
-            style={{ fontFamily: "Haim, sans-serif", filter: 'drop-shadow(4px 6px #000000)', marginTop: '-0.2em' }}
-          >
-            לנו את הבית
-          </h2>
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-32 mt-8 pb-32" style={{ fontFamily: "Haim, sans-serif" }}>
+          <div className="relative inline-block w-full">
+            <h1
+              className="text-[80px] sm:text-8xl md:text-9xl font-black leading-none mb-0 text-red-600"
+              style={{ fontFamily: "Haim, sans-serif", filter: 'drop-shadow(6px 6px #000000)' }}
+            >
+              דורסים
+            </h1>
+            <h2
+              className="text-[44px] sm:text-7xl md:text-5xl font-black leading-none mb-8 text-white"
+              style={{ fontFamily: "Haim, sans-serif", filter: 'drop-shadow(4px 6px #000000)', marginTop: '-0.2em' }}
+            >
+              לנו את הבית
+            </h2>
+            <img
+              src="/tires.png"
+              alt=""
+              className="absolute inset-0 w-full pointer-events-none object-contain opacity-60"
+            />
+          </div>
 
           <p className="text-sm max-w-3xl mx-auto mb-48" >
             <span className="bg-white text-black px-2 py-0.5">בין בתים ופרדסים בשרון מתכננים להעביר מפלצת של אספלט ובטון, כביש 553 החדש קורע את הקהילה שלנו, מזהם את אויר הילדים שלנו</span>
