@@ -411,22 +411,22 @@ function HomePage() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-32 sm:pt-32 pb-32" style={{ fontFamily: "Haim, sans-serif" }}>
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-1 animate-fade-in-up text-white"
-            style={{ fontFamily: "Haim, sans-serif", animationDelay: '0.4s', textShadow: '0 2px 24px rgba(0,0,0,0.6)' }}
+            className="text-7xl sm:text-8xl md:text-9xl font-black leading-none mb-0 animate-fade-in-up text-white"
+            style={{ fontFamily: "Haim, sans-serif", animationDelay: '0.4s', filter: 'drop-shadow(0 4px 16px rgba(0,0,0,0.7))' }}
           >
             דורסים
           </h1>
           <h2
-            className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight mb-8 animate-fade-in-up"
-            style={{ fontFamily: "Haim, sans-serif", animationDelay: '0.5s', textShadow: '0 2px 16px rgba(0,0,0,0.6)', color: '#d74040' }}
+            className="text-5xl sm:text-6xl md:text-7xl font-black leading-none mb-8 animate-fade-in-up"
+            style={{ fontFamily: "Haim, sans-serif", animationDelay: '0.5s', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.7))', color: '#d74040', marginTop: '-0.2em' }}
           >
             לנו את הבית
           </h2>
 
           <br /><br />
 
-          <p className="text-lg sm:text-xl text-white/85 max-w-3xl mx-auto mb-10 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.6s', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
-            בין בתים ופרדסים בשרון מתכננים להעביר מפלצת של אספלט ובטון, כביש 553 החדש קורע את הקהילה שלנו, מזהם את אויר הילדים שלנו
+          <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-10 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.6s' }}>
+            <span className="bg-white text-black px-2 py-0.5 leading-loose box-decoration-clone">בין בתים ופרדסים בשרון מתכננים להעביר מפלצת של אספלט ובטון, כביש 553 החדש קורע את הקהילה שלנו, מזהם את אויר הילדים שלנו</span>
           </p>
 
           <div className="hidden sm:flex flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
@@ -444,11 +444,12 @@ function HomePage() {
             </a>
           </div>
 
-          <p className="text-white/40 text-sm max-w-2xl mx-auto mt-16 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.8s' }}>
-            ״עין ורד. עין שריד. תל מונד. פורת. יעף. יעבץ. עזריאל. בני דרור. כפר הס. חרות. משמרת. קדימה.
+          <p className="text-white/40 text-xl max-w-2xl mx-auto mt-16 animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.8s' }}>
+            עין ורד. עין שריד. תל מונד. פורת. יעף. יעבץ. עזריאל. בני דרור.<br />כפר הס. חרות. משמרת. קדימה.
             <br /><br />
-            <span className="bg-white text-black px-1">חייבים לעצור את זה</span>{' '}<span className="font-bold text-red-500">עכשיו</span>
           </p>
+
+          <div className="text-2xl"><span className="bg-white text-black px-1">חייבים לעצור את זה</span>{' '}<span className="font-bold text-red-500">עכשיו</span></div>
 
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
             <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
